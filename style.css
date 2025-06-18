@@ -1,0 +1,295 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+span.live {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f00!important;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: .7rem !important;
+    font-family: 'Orbitron'!important;
+}
+
+  #matchcard{
+    font-family: "Titillium Web";
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #fff;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2px;
+    overflow: hidden;
+    padding: 3px;
+    color:black;
+    cursor:pointer;
+    width: 100%;
+}
+
+#leaguenames{
+  font-weight:bold;
+  font-family: "Orbitron";
+}
+
+span.live-icon {
+    margin-left: 7px;
+    display: block;
+    font-size: 1.3em;
+    width: 8px;
+    height: 8px;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 100px;
+    letter-spacing: -1px;
+    border: none;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, .5);
+    -webkit-animation: pulse 1.5s infinite;
+}
+    /* Basic styling for search box and container */
+    #searchBox{
+            margin-bottom: 10px;
+        
+            font-weight: bold;
+        }
+   
+        .item {
+            margin-bottom: 5px;
+        }
+        .hidden { display: none; }
+        .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: row!important;
+    align-content: center!important;
+    justify-content: center!important;
+    align-items: center!important;
+    width: 100%!important;
+}
+#afterleaguename::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    margin: 0 10px;
+    background: #00D2BE;
+}
+
+#timeofthematch{
+  background-color: #ededed;
+  border-radius: 20px;
+  align-content: center;
+  text-align: center;
+  margin-right: 5px;
+  padding:4px;
+}
+
+input {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid black;
+  color: #111;
+  font-size: 15px;
+  box-shadow: 3px 1px 0px 2px, 0px -1px 0px 2px rgba(0, 0, 0, 0.62);
+  height: 58px;
+  transform: skew(-3deg, 1deg);
+  font-family: "Knewave", cursive;
+  letter-spacing: 2px;
+  text-transform: uppercase;}
+  .champ{display: none;}
+
+#endedresult{
+color:red;
+font-weight: bold;
+}     
+
+      
+.HeaderTOP {
+  display:none!important;    
+}   
+#clicksearch, .open.nav1{
+ display:none!important;         
+      }
+.HeaderBg {
+    box-shadow: 0 6px 14px 0 rgb(9 32 76 / 5%);
+    transition: all .3s linear;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    background: #212121!important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+      
+div#afterleaguename.col-1 {
+    padding: 4px;
+} 
+ 
+.HBOTC {
+    position: relative;
+    transition: all .3s linear;
+    width: 100%;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    display: flex!important;
+    align-items: center!important;
+    height: 62px;
+    flex-direction: row!important;
+    flex-wrap: nowrap!important;
+    align-content: center!important;
+    justify-content: center!important;
+}   
+
+.HeaderBOT #menu ul a {
+    font: var(--HLinkfont);
+    font-size: 1.3rem;
+    color: var(--HColor);
+    line-height: 2px;
+}
+ .HeaderBOT #menu ul li {
+    flex-shrink: 0;
+    margin-right: 15px;
+    position: relative;
+    transition: all .3s linear;
+    margin-bottom: 30px;
+}
+.HeaderBOT #menu ul li a:hover {
+    color: #e2e2e2 !important;
+    text-decoration: none !important;
+    background-color: #930f0d !important;
+    padding: 44px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Titillium Web;
+}
+      
+    #ahmed .half-width-widget .widget {
+    width: 50%;
+    float: left; /* To position them side by side */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+#ahmed:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+    
+.h3, h3 {
+    font-size: 1rem !important;
+}
+    
+.main-amm, .site .widget {
+      margin: 0px 0 5px!important;
+}    
+    
+.post-home{
+      width: 100%!important;
+}
+    
+a.PLHolder.thumb {
+    display: none;
+}   
+    
+    /* General styling for the fixture card */
+    .fixture-card {
+      background-color: #121212; /* Light gray for card background */
+      border: 1px solid #dee2e6; /* Light border around the card */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px; /* Padding inside the card */
+      margin-bottom: 30px; /* Margin between cards */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light box shadow */
+      cursor: pointer; /* Indicate clickable card */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      color: white !important;
+    }
+
+    .fixture-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      transform: translateY(-5px); /* Slight lift effect */
+    }
+
+    .team-logo {
+      width: 50px; /* Adjust the logo size */
+      height: 50px;
+      object-fit: contain; /* Keep logo aspect ratio */
+    
+    }
+
+    .team-name {
+      font-size: 15px!important; /* Team name font size */
+      font-weight: bold; /* Bold team name */
+      color: white; /* Dark color for team name */
+      text-align: center; /* Center the team name */
+      margin: 5px 0!important; /* Space around team name */
+    }
+
+    #time {
+      font-size: 30px; /* Time font size */
+      color: #6c757d; /* Muted text color */
+      text-align: center; /* Center the time */
+      margin-top: 8px; /* Space between VS and time */
+      display: block; /* Ensure time is on a new line */
+    }
+
+    h1 {
+      text-align: center; /* Center the "VS" */
+      font-size: 24px; /* Size of "VS" */
+      font-weight: bold; /* Bold font weight for "VS" */
+      color: #495057; /* Dark color for "VS" text */
+      margin: 0; /* Remove margin around "VS" */
+    }
+
+    /* Horizontal layout */
+    .fixture-card .row {
+      display: flex; /* Use flexbox to align children */
+      justify-content: space-around; /* Distribute evenly horizontally */
+      align-items: center; /* Vertically center the children */
+    }
+
+    .fixture-card .col {
+      text-align: center; /* Center align text within columns */
+      flex: 1; /* Equal width columns */
+    }
+
+    .fixture-card .col h3 {
+      margin: 0; /* Remove default margin for team names */
+    }
+
+    .container {
+      margin-top: 40px; /* Top margin for the page content */
+    }
+
+  .champ{
+      text-align: center;
+    transition: all 0.2s linear;
+    float: left;
+    color: var(--whiteColor);
+    background: var(--minColor);
+    position: relative;
+    font-size: 13px;
+    padding: 0 15px;
+    border-radius: 2px;
+    height: 28px;
+    line-height: 28px;
+      
+      }
