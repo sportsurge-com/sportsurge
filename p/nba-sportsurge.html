@@ -1,23 +1,159 @@
-<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' rel='stylesheet'/>
-<link href='/style.css' rel='stylesheet'/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportsurge: NBA</title>
 
-<h2>
-  Sportsurge NBA Streams
-</h2>
-<center>
-  <!--soccer-->
-  <div class="container" id="matchesContainer">
-    <div id="nba"></div>
-    <div id="nba-summer-leauge"></div>
-    <div id="wnba"></div>
-  </div>
-</center>
+    <!-- Bootstrap is not strictly necessary for this design, but kept for grid system compatibility -->
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 
-<p style="text-align: justify;">
-   <b>Sportsurge NBA Reddit streams</b>.
-  Many fans search for this term to find ways to watch NBA games online. This
-  guide will help you understand how people search for <a href="https://www.sportsurge.uno">Sportsurge</a>  NBA content and how to find what you're looking for at all sports events. We'll break down common
-  search queries and what they reveal about user intent.&nbsp;&nbsp;</p><h3 style="text-align: justify;">sportsurge NBA all-star game</h3><p style="text-align: justify;">also watch :&nbsp;<b><a href="https://v3.sportsurge.uno/#NBA ALL STAR GAME " target="_blank">NBA All-Star Game 2025 Live</a></b></p><p style="text-align: justify;"><br /></p>
-<h3 style="text-align: left;">Sport Surge NBA&nbsp;</h3><p style="text-align: justify;">Looking for your NBA live events? Sportsurge NBA offers a comprehensive hub for accessing NBA streaming links, bringing you closer to every slam dunk and buzzer-beater. We gather links from across the web, offering a convenient way to catch your favorite teams in action. While we strive to provide a seamless experience, please remember that stream availability and high quality.&nbsp; Enjoy the game, and stay tuned for the latest updates and links to all your NBA streams, with sportsurge the best sports streaming site.&nbsp;</p><h3 style="text-align: left;">How to Watch NBA Streams on Sportsurge</h3>To access free <b><a href="https://www.sportsurge.uno/p/nba.html">NBA streams </a></b>on Sportsurge, follow these steps..<br />Click here to watch NBA streams now and never miss a moment of the action!
-<script src='https://korbegy.github.io/streameast/js/script2.js'></script>
-<script src='https://korbegy.github.io/streameast/js/365scores2.js'></script>
+    <!-- Custom CSS for the Minimalist Style -->
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #111111;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            padding: 5rem 0 3rem 0;
+        }
+        
+        .header h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive font size */
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        /* --- Main Content & Game List --- */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #matchesContainer {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 1.5rem 0;
+        }
+
+        /* Styling for the links your JS will generate */
+        #matchesContainer a, .game-link {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111;
+            text-decoration: none;
+            padding: 1rem 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        
+        #matchesContainer a:hover, .game-link:hover {
+            background-color: #f4f4f4;
+            color: #000;
+        }
+
+        .loading-placeholder {
+            font-size: 1.25rem;
+            color: #888;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* --- Info Section --- */
+        .info-section {
+            padding: 4rem 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .info-section h3 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #111;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-section a {
+            color: #111;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
+        .info-section a:hover {
+            color: #000;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+
+        <header class="header">
+            <h1>Sportsurge NBA</h1>
+            <p>A simple, direct list of live NBA streams.</p>
+        </header>
+
+        <main>
+            <!-- Your JavaScript will populate the games here. -->
+            <!-- The CSS above is ready to style them as they appear. -->
+            <div id="matchesContainer">
+                <div class="loading-placeholder">Finding live games...</div>
+                <div id="nba"></div>
+                <div id="nba-summer-leauge"></div>
+                <div id="wnba"></div>
+            </div>
+        </main>
+
+        <section class="info-section">
+            <p>
+               <b>Sportsurge NBA Reddit streams</b>. Many search this to find games. This is a direct hub for <a href="https://www.sportsurge.uno">Sportsurge</a> content and NBA events. Find your game, click the link, and watch.
+            </p>
+            
+            <h3>NBA All-Star Game 2025</h3>
+            <p>
+                Watch the main event here: <b><a href="https://v3.sportsurge.uno/#NBA ALL STAR GAME " target="_blank">NBA All-Star Game 2025 Live</a></b>
+            </p>
+        </section>
+
+        <footer>
+            <p>Disclaimer: Links are aggregated from third-party sources. We do not host content.</p>
+        </footer>
+
+    </div>
+
+    <!-- Your Original Javascript Files -->
+    <script src='https://korbegy.github.io/streameast/js/script2.js'></script>
+    <script src='https://korbegy.github.io/streameast/js/365scores2.js'></script>
+    
+</body>
+</html>
