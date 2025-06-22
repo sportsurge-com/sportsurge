@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="canonical" href="http://www.sportsurge.uno/live/wwe.html" />
+    <!-- SEO Meta Tags -->
+    <title>
+      Sportsurge WWE: Live Streaming, WrestleMania 41, RAW & SmackDown Schedule
+    </title>
+    
+    <meta
+      name="description"
+      content="Watch live WWE streams online with Sportsurge WWE. Get schedules for WrestleMania 41, RAW, SmackDown, NXT, and all major WWE Premium Live Events. Your go-to for WWE broadcasts."
+    />
+    <meta
+      name="keywords"
+      content="Sportsurge WWE, live WWE streams, WWE streaming, WrestleMania 41, WWE RAW, WWE SmackDown, NXT live, WWE PPV, watch wrestling online, WWE live broadcast, StreamEast WWE"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="Sportsurge WWE: Live Streaming, WrestleMania 41, RAW & SmackDown Schedule"
+    />
+    <meta
+      property="og:description"
+      content="Watch live WWE streams online with Sportsurge WWE. Get schedules for WrestleMania 41, RAW, SmackDown, NXT, and all major WWE Premium Live Events."
+    />
+    <meta property="og:image" content="https://iili.io/2ZE95Ou.webp" />
+    <!-- WWE specific image -->
+    <meta
+      property="og:url"
+      content="https://www.example.com/sportsurge-wwe-page"
+    />
+    <!-- Your actual page URL -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sportsurge WWE: Live Streaming, WrestleMania 41, RAW & SmackDown Schedule"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch live WWE streams online with Sportsurge WWE. Get schedules for WrestleMania 41, RAW, SmackDown, NXT, and all major WWE Premium Live Events."
+    />
+    <meta name="twitter:image" content="https://iili.io/2ZE95Ou.webp" />
+    <!-- WWE specific image -->
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <!-- Optional: Your Twitter handle -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Replace with your favicon path -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a0000 0%,
+          #4a0000 100%
+        ); /* Deep red gradient */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      ::selection {
+        background: #ff0000; /* Red selection */
+        color: white;
+      }
+
+      /* --- Container and Layout --- */
+      .container {
+        width: 100%;
+        max-width: 900px; /* Max width for content */
+        margin: 0 auto;
+        padding: 0 15px;
+        text-align: center; /* Center the H2 title */
+      }
+
+      /* --- WWE Section Title --- */
+      .wwe-section-title {
+        color: white;
+        font-size: 2.8rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+        animation: fadeInDown 1s ease-out forwards;
+        opacity: 0;
+      }
+
+      /* --- Match Card Styling --- */
+      .row {
+        /* General row styling for match cards */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+          background-color 0.3s ease;
+        cursor: pointer; /* Indicate clickability */
+      }
+      .row:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 15px rgba(255, 0, 0, 0.3); /* Red glow on hover */
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      #matchcard.column {
+        flex-grow: 1;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      /* Column distribution for match card details */
+      .row > .col-3,
+      .row > .col-5,
+      .row > .col-1 {
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+      }
+      .row > .col-3:first-child {
+        justify-content: flex-start;
+      } /* League name */
+      .row > .col-5 {
+        justify-content: flex-start;
+        flex-grow: 1; /* Allow match title to take available space */
+        padding-left: 15px; /* Space for match title */
+        font-size: 1.1rem; /* Slightly larger for match title */
+        font-weight: 700;
+      }
+      .row > .col-3:last-child {
+        justify-content: flex-end;
+      } /* Date/Time */
+
+      #leaguenames {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #fca311; /* Orange accent */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+      }
+
+      #afterleaguename {
+        flex: 0 0 10px; /* Fixed small width for spacing */
+      }
+
+      #timeofthematch {
+        font-size: 0.9rem;
+        color: #cbd5e1; /* Lighter color for dates/days */
+        font-weight: 400;
+      }
+      #timeofthematch strong {
+        /* Style for bold days like Monday/Friday */
+        color: white;
+        font-weight: 700;
+      }
+
+      .row a {
+        /* Styling for the links within the match title */
+        color: white; /* White links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .row a:hover {
+        color: #fca311; /* Orange on hover */
+        text-decoration: underline;
+      }
+
+      /* --- Descriptive Text Styling --- */
+      .wwe-description {
+        margin-top: 40px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        animation: fadeInUp 1.2s ease-out forwards;
+        opacity: 0;
+      }
+      .wwe-description p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 15px;
+        line-height: 1.7;
+        text-align: justify;
+      }
+      .wwe-description a {
+        color: #fca311;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+      .wwe-description a:hover {
+        color: #ffc947;
+        text-decoration: underline;
+      }
+      .wwe-description strong {
+        color: white;
+        font-weight: 700;
+      }
+      .wwe-description ul {
+        list-style: disc inside;
+        padding-left: 20px;
+        margin-top: 20px;
+      }
+      .wwe-description li {
+        margin-bottom: 10px;
+        color: #e2e8f0;
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      /* --- Animations --- */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animations on load */
+      .wwe-section-title.animate,
+      .container.animate,
+      .wwe-description.animate {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WWE Section Title -->
+    <h2 class="wwe-section-title">Sportsurge WWE</h2>
+
+    <!-- Match Cards Container -->
+    <div class="container">
+      <div
+        class="row"
+        onclick="window.open('https://v3.sportsurge.uno/#WrestleMania 41', '_blank')"
+      >
+        <div class="col column mt-1" id="matchcard">
+          <div class="row">
+            <div class="col-3"><span id="leaguenames">WWE</span></div>
+            <div class="col-1" id="afterleaguename"></div>
+            <div class="col-5">
+              <a
+                href="https://v3.sportsurge.uno/#WrestleMania 41"
+                target="_blank"
+                >WrestleMania 41</a
+              >
+            </div>
+            <div class="col-3" id="timeofthematch">
+              <span>April 19–20, 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row"
+        onclick="window.open('https://v3.sportsurge.uno/#WWE RAW', '_blank')"
+      >
+        <div class="col column mt-1" id="matchcard">
+          <div class="row">
+            <div class="col-3"><span id="leaguenames">WWE</span></div>
+            <div class="col-1" id="afterleaguename"></div>
+            <div class="col-5">WWE RAW ON NETFLIX</div>
+            <div class="col-3" id="timeofthematch"><strong>Monday</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row"
+        onclick="window.open('https://v3.sportsurge.uno/#WWE SMACKDOWN', '_blank')"
+      >
+        <div class="col column mt-1" id="matchcard">
+          <div class="row">
+            <div class="col-3"><span id="leaguenames">WWE</span></div>
+            <div class="col-1" id="afterleaguename"></div>
+            <div class="col-5">WWE SMACKDOWN</div>
+            <div class="col-3" id="timeofthematch"><strong>Friday</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Descriptive Text -->
+    <div class="wwe-description container">
+      <p>
+        Sportsurge WWE Live Streaming. SportSurge WrestleMania 41 "StreamEast
+        Live", Look no further for your ultimate live streaming solution -
+        welcome to the go-to spot for all your live WWE broadcasts. Sportsurge
+        WWE LIVE scours the globe to deliver top-notch live streaming of all
+        your favorite events. Explore our extensive list of upcoming events
+        today and beyond. WWE StreamEast offers a wide selection of WWE events,
+        from Premium Live Events like WrestleMania, SummerSlam, and Royal Rumble
+        to weekly shows like Raw and SmackDown, and NXT spanning different
+        continents. Whether you're into the high-flying action of singles
+        matches or the tag team chaos of tag team matches, we've got you
+        covered. Don't miss out on the thrill of watching your favorite WWE
+        Superstars battle it out in the ring. Tune in to StreamEast WWE LIVE for
+        a premium live streaming experience that puts you right in the center of
+        the action! 💪🔥
+      </p>
+      <ul>
+        <li>Sportsurge Mike Tyson</li>
+        <li>Sportsurge Jake Paul</li>
+        <li>Sportsurge Canelo Alvarez</li>
+        <li>Sportsurge Gervonta Davis</li>
+        <li>Sportsurge David Benavidez</li>
+        <li>Sportsurge David Morrell Jr</li>
+      </ul>
+    </div>
+
+    <!-- Script Tags -->
+    <!-- NOTE: These scripts are kept here as per your request.
+         In a real-world scenario, their purpose and impact on this specific WWE section
+         would need to be understood to ensure they don't cause conflicts or errors. -->
+    <script src="https://korbegy.github.io/streameast/js/script2.js"></script>
+    <script src="https://korbegy.github.io/streameast/js/365scores2.js"></script>
+
+    <script>
+      // Simple animation trigger on DOM load
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector(".wwe-section-title").classList.add("animate");
+        document.querySelector(".container").classList.add("animate"); // For the match cards container
+        document.querySelector(".wwe-description").classList.add("animate");
+      });
+    </script>
+  </body>
+</html>

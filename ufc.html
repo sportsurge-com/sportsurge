@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="http://www.sportsurge.uno/live/ufc.html" />
+    <!-- SEO Meta Tags -->
+    <title>Sportsurge UFC: Live MMA Streams, Fight Schedules & More</title>
+    <meta
+      name="description"
+      content="Watch live UFC streams and MMA fight schedules online with Sportsurge. Get access to PPV events, Fight Nights, and reliable live streams."
+    />
+    <meta
+      name="keywords"
+      content="Sportsurge UFC, live UFC streams, MMA streams, watch UFC online, UFC Fight Night, UFC PPV, MMA live streams, sportsurge mma, live boxing streams"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="Sportsurge UFC: Live MMA Streams, Fight Schedules & More"
+    />
+    <meta
+      property="og:description"
+      content="Watch live UFC streams and MMA fight schedules online with Sportsurge. Get access to PPV events, Fight Nights, and reliable live streams."
+    />
+    <meta property="og:image" content="https://i.ibb.co/Q97VNR4/mma.webp" />
+    <!-- Representative image for UFC -->
+    <meta
+      property="og:url"
+      content="https://www.example.com/sportsurge-ufc-page"
+    />
+    <!-- Your actual page URL -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sportsurge UFC: Live MMA Streams, Fight Nights & More"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch live UFC streams and MMA fight schedules online with Sportsurge. Get access to PPV events, Fight Nights, and reliable live streams."
+    />
+    <meta name="twitter:image" content="https://i.ibb.co/Q97VNR4/mma.webp" />
+    <!-- Representative image for UFC -->
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <!-- Optional: Your Twitter handle -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Replace with your favicon path -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a0000 0%,
+          #4a0000 100%
+        ); /* Deep red gradient */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      ::selection {
+        background: #ff0000; /* Red selection */
+        color: white;
+      }
+
+      /* --- Container & Layout --- */
+      .container {
+        width: 100%;
+        max-width: 1100px; /* Max width for content */
+        margin: 0 auto;
+        padding: 0 15px; /* Horizontal padding */
+      }
+
+      /* --- Match Card Styling --- */
+      .row[onclick] {
+        /* Style for clickable rows */
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border-radius: 10px; /* Slightly rounded corners */
+        margin-bottom: 15px; /* Space between cards */
+        background: rgba(
+          255,
+          255,
+          255,
+          0.05
+        ); /* Subtle background for the card */
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        display: flex; /* Ensure it behaves like a flex container */
+        align-items: center; /* Vertically center content */
+      }
+
+      .row[onclick]:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      #matchcard.column {
+        flex-grow: 1; /* Allow it to grow and take available space */
+        padding: 0; /* Remove padding here, handled by the parent row */
+        background: none; /* Remove its own background */
+        box-shadow: none; /* Remove its own shadow */
+        border-radius: 0; /* Remove its own border-radius */
+        display: flex; /* Use flex for internal layout */
+        align-items: center; /* Center content vertically */
+      }
+
+      /* Column distribution within the match card */
+      .row > .col-3,
+      .row > .col-5,
+      .row > .col-1 {
+        display: flex;
+        align-items: center; /* Vertically align text within columns */
+        justify-content: center; /* Center text horizontally */
+        padding: 0 5px; /* Small horizontal padding */
+      }
+
+      .row > .col-3:first-child {
+        justify-content: flex-start;
+        padding-left: 0;
+      } /* Align league name to the left */
+      .row > .col-5 {
+        justify-content: flex-start;
+        flex-grow: 1;
+        padding-left: 15px; /* Space for match title */
+      }
+      .row > .col-3:last-child {
+        justify-content: flex-end;
+        padding-right: 0;
+      } /* Align time to the right */
+
+      #leaguenames {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #fca311; /* Orange accent for league name */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+      }
+
+      #afterleaguename {
+        flex: 0 0 10px; /* Fixed small width for spacing */
+      }
+
+      #timeofthematch {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #e63946; /* Red for "LIVE NOW!" */
+      }
+      #timeofthematch .live {
+        animation: pulse-red 1.5s infinite; /* Pulsing animation for LIVE */
+        font-weight: bold;
+      }
+
+      /* --- Main Heading --- */
+      h2 {
+        color: white;
+        font-size: 2.5rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        margin: 40px 0 20px 0; /* More spacing above and below */
+        letter-spacing: 1px;
+        text-align: center; /* Center aligned by default */
+      }
+      h2:first-of-type {
+        /* Specific styling for the first H2 in the container */
+        margin-top: 10px; /* Less margin above if it follows header */
+      }
+      h2:last-of-type {
+        /* Styling for the H2 after the container */
+        text-align: left; /* As specified in your HTML */
+        margin-top: 50px;
+      }
+
+      /* --- SEO Text Styling --- */
+      .seo-text {
+        margin-top: 50px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+        opacity: 0; /* Start hidden for animation */
+      }
+      .seo-text h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #fca311; /* Orange accent for SEO title */
+        text-align: center; /* Center SEO title */
+      }
+      .seo-text p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 15px;
+        line-height: 1.7;
+        text-align: justify; /* As per your original style */
+      }
+      .seo-text p a {
+        color: #fca311; /* Orange links within SEO text */
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+      .seo-text p a:hover {
+        color: #ffc947; /* Lighter orange on hover */
+        text-decoration: underline;
+      }
+      .seo-text p strong {
+        color: white; /* Make bold text stand out more */
+      }
+
+      /* --- Additional text block styling --- */
+      .additional-text-block {
+        margin-top: 40px;
+        padding: 25px;
+        background-color: rgba(255, 255, 255, 0.04);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        animation: fadeInUp 1.2s ease-out forwards; /* Fade-in animation */
+        opacity: 0; /* Start hidden for animation */
+      }
+      .additional-text-block p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+      .additional-text-block b {
+        color: white;
+      }
+      .additional-text-block a {
+        color: #fca311; /* Orange links */
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+      .additional-text-block a:hover {
+        color: #ffc947; /* Lighter orange on hover */
+        text-decoration: underline;
+      }
+      .additional-text-block br {
+        /* Remove excessive spacing from <br /> tags */
+        display: none;
+      }
+
+      /* --- Animations --- */
+      @keyframes pulse-red {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+          box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+        }
+        70% {
+          transform: scale(1.1);
+          opacity: 0;
+          box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+          box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animations on load */
+      .container.animate {
+        opacity: 1;
+      }
+      .seo-text.animate {
+        opacity: 1;
+      }
+      .additional-text-block.animate {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="matchesContainer">
+      <div
+        class="row"
+        onclick="window.open('https://v3.sportsurge.uno/#UFC 314: Volkanovski vs. Lopes', '_blank')"
+      >
+        <div id="matchcard" class="col column mt-1">
+          <div class="row">
+            <div class="col-3">
+              <span id="leaguenames">MMA</span>
+            </div>
+            <div id="afterleaguename" class="col-1"></div>
+            <div class="col-5">UFC 314: Volkanovski vs. Lopes</div>
+            <div id="timeofthematch" class="col-3">
+              <span class="live">LIVE NOW!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more match rows here if needed -->
+
+      <h2>Sportsurge UFC: Watch Live UFC Streams & MMA Fights Online</h2>
+
+      <div id="UFC" style="display: none"></div>
+      <div id="ufcmma"></div>
+
+      <div class="seo-text">
+        <h2>Your Ultimate Source for Live UFC and MMA Streaming</h2>
+        <p>
+          if you want to <strong>watch UFC live streams online</strong>?
+          <strong>Sportsurge UFC streams</strong> is your premier destination
+          for catching all the action from the Octagon. Whether you're eager to
+          see <strong>UFC pay-per-view events</strong>,
+          <strong
+            ><a href="https://www.sportsurge.uno/p/mma.html">UFC</a> Fight
+            Night</strong
+          >
+          cards, or other exciting r/<strong>MMA streams reddit</strong>,
+          Sportsurge provides a convenient and reliable way to stream live
+          events.
+        </p>
+        <p>
+          Never miss a knockout, submission, or thrilling decision again.
+          <strong>Sportsurge UFC</strong> brings you access to high-quality live
+          reddit MMA streams, allowing you to experience the intensity and
+          excitement of every UFC sportsurge event from the comfort of your
+          home. Stay up-to-date with all the latest fight cards and enjoy
+          seamless streaming for major PPV events and Fight Nights alike.
+        </p>
+        <p>
+          Forget searching through unreliable sources. Sportsurge is your
+          centralized hub for
+          <strong>streaming UFC and MMA fights live</strong>. Get ready for
+          fight night and dive into the world of mixed martial arts with
+          Sportsurge!
+        </p>
+      </div>
+    </div>
+
+    <div class="additional-text-block container">
+      <h2>ufc streams</h2>
+      <p>
+        <b
+          ><a href="http://www.sportsurge.uno/p/mma.html">Sportsurge UFC</a>
+          Live Streaming Online.</b
+        >
+        <b>MMA streams with sportsurge</b> is your go-to platform to watch live
+        UFC streams, including major pay-per-views and thrilling UFC Fight Night
+        events. This is the best place to find
+        <b>UFC Free Live Streams online</b>. Enjoy a convenient and reliable way
+        to stay connected with your favorite fighters and experience the live
+        action from anywhere. Whether it's a highly anticipated pay-per-view or
+        an action-packed fight night, <b>Sportsurge UFC</b> ensures you don't
+        miss any of the excitement and drama of UFC events as they unfold.  
+      </p>
+    </div>
+
+    <!-- Script Tags -->
+    <script src="https://korbegy.github.io/streameast/js/script2.js"></script>
+    <script src="https://korbegy.github.io/streameast/js/365scores2.js"></script>
+
+    <script>
+      // Animation trigger on DOM load
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("matchesContainer").classList.add("animate");
+        document.querySelector(".seo-text").classList.add("animate");
+        document
+          .querySelector(".additional-text-block")
+          .classList.add("animate");
+      });
+    </script>
+  </body>
+</html>

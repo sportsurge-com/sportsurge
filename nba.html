@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      Sportsurge NBA: Live Basketball Streams, Schedules & All-Star Game
+    </title>
+    <meta
+      name="description"
+      content="Watch live NBA basketball streams online with Sportsurge NBA. Get free access to all NBA games, playoffs, All-Star Game, and regular season games in HD with reliable streams."
+    />
+    <meta
+      name="keywords"
+      content="Sportsurge NBA, live NBA streams, NBA basketball streams, watch NBA online, NBA All-Star Game, NBA playoffs, NBA games live, free NBA streams, NBA Reddit streams, basketball streams, NBA schedule, Sportsurge v3 NBA"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="Sportsurge NBA: Live Basketball Streams, Schedules & All-Star Game"
+    />
+    <meta
+      property="og:description"
+      content="Watch live NBA basketball streams online with Sportsurge NBA. Get free access to all NBA games, playoffs, All-Star Game, and regular season games in HD."
+    />
+    <meta property="og:image" content="https://i.ibb.co/qC9wrtj/nba.webp" />
+    <!-- NBA specific image -->
+    <meta
+      property="og:url"
+      content="https://www.example.com/sportsurge-nba-page"
+    />
+    <!-- Your actual page URL -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sportsurge NBA: Live Basketball Streams, Schedules & All-Star Game"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch live NBA basketball streams online with Sportsurge NBA. Get free access to all NBA games, playoffs, All-Star Game, and regular season games in HD."
+    />
+    <meta name="twitter:image" content="https://i.ibb.co/qC9wrtj/nba.webp" />
+    <!-- NBA specific image -->
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <!-- Optional: Your Twitter handle -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Replace with your favicon path -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a0000 0%,
+          #4a0000 100%
+        ); /* Deep red gradient */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure body takes at least full viewport height */
+        overflow-x: hidden; /* Prevent horizontal scroll */
+        padding: 0; /* Reset padding for body to allow navbar to be at the very top */
+        box-sizing: border-box;
+      }
+
+      ::selection {
+        background: #ff0000; /* Red selection */
+        color: white;
+      }
+
+      /* --- Navbar Styles --- */
+      .navbar {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.4
+        ); /* Semi-transparent black background */
+        backdrop-filter: blur(10px); /* Blurring effect for a modern look */
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between; /* Pushes logo to left, nav items to right */
+        align-items: center;
+        position: sticky; /* Makes the navbar stick to the top */
+        top: 0;
+        z-index: 1000; /* Ensures navbar is above other content */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar .logo img {
+        height: 45px; /* Adjust logo size as needed */
+        margin-right: 15px;
+        vertical-align: middle; /* Helps align image properly */
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .navbar .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center; /* Vertically center items in the nav-links */
+      }
+
+      .navbar .nav-links li {
+        margin-left: 30px; /* Space between nav items */
+      }
+
+      .navbar .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding-bottom: 5px; /* For the underline effect */
+        display: block; /* Needed for padding and hover area */
+      }
+
+      .navbar .nav-links a:hover {
+        color: #ff0000; /* Red on hover */
+        border-bottom: 2px solid #ff0000; /* Red underline on hover */
+      }
+
+      /* Style for the Version 2 button */
+      .navbar .nav-links .version-2-button {
+        background-color: #ff0000; /* Red background */
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 700;
+        transition: background-color 0.3s ease;
+        border-bottom: none !important; /* Remove bottom border for button */
+        margin-left: 40px; /* More space before the button */
+      }
+
+      .navbar .nav-links .version-2-button:hover {
+        background-color: #cc0000; /* Darker red on hover */
+        color: white;
+        border-bottom: none !important; /* Ensure no border on hover */
+      }
+
+      /* Hamburger Menu for Mobile */
+      .hamburger-menu {
+        display: none; /* Hidden by default on larger screens */
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+        padding: 0 10px; /* Add some padding */
+      }
+
+      /* --- Content Wrapper (to ensure footer stays at bottom) --- */
+      .content-wrapper {
+        flex-grow: 1; /* Allows this section to take up available vertical space */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+        width: 100%;
+        padding: 0 20px; /* Add some horizontal padding around content */
+        box-sizing: border-box;
+      }
+
+      /* --- NBA Section Title --- */
+      .nba-section-title {
+        color: white;
+        font-size: clamp(2.5rem, 5vw, 3rem); /* Responsive font size */
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        margin-top: 30px; /* Space below navbar */
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+        animation: fadeInDown 1s ease-out forwards;
+        opacity: 0;
+        width: 100%; /* Ensure it takes full width */
+        text-align: center; /* Center the title */
+      }
+
+      /* --- Container for Match Cards --- */
+      .matches-container {
+        width: 100%;
+        max-width: 900px; /* Max width for content */
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        animation: fadeInUp 1.5s ease-out forwards;
+        opacity: 0;
+      }
+      /* Apply animation trigger if needed */
+      .matches-container.animate {
+        opacity: 1;
+      }
+
+      /* --- Match Card Styling --- */
+      .row {
+        /* General row styling for match cards */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+          background-color 0.3s ease;
+        cursor: pointer; /* Indicate clickability */
+      }
+      .row:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 15px rgba(255, 0, 0, 0.3); /* Red glow on hover */
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Specific styling for the inner columns of a row */
+      .row > div {
+        /* Targeting direct children for column styling */
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+      }
+      .row > div:first-child {
+        justify-content: flex-start;
+      } /* League name column */
+      .row > div:nth-child(2) {
+        /* Match title column */
+        justify-content: flex-start;
+        flex-grow: 1; /* Allow match title to take available space */
+        padding-left: 15px; /* Space for match title */
+        font-size: clamp(
+          0.9rem,
+          1.5vw,
+          1.1rem
+        ); /* Responsive font size for match title */
+        font-weight: 700;
+      }
+      .row > div:last-child {
+        justify-content: flex-end;
+      } /* Date/Time column */
+
+      #leaguenames {
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem); /* Responsive font size */
+        font-weight: 700;
+        color: #fca311; /* Orange accent */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+      }
+
+      #afterleaguename {
+        flex: 0 0 10px; /* Fixed small width for spacing */
+      }
+
+      #timeofthematch {
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem); /* Responsive font size */
+        color: #cbd5e1; /* Lighter color for dates/days */
+        font-weight: 400;
+      }
+      #timeofthematch .live {
+        /* For special messages like "NBA All-Star Game" or "LIVE" */
+        color: white; /* White for general highlights */
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      #timeofthematch strong {
+        /* For specific bold items */
+        color: white;
+        font-weight: 700;
+      }
+
+      .row a {
+        /* Styling for the links within the match title */
+        color: white; /* White links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .row a:hover {
+        color: #fca311; /* Orange on hover */
+        text-decoration: underline;
+      }
+
+      /* --- Descriptive Text Styling --- */
+      .nba-description {
+        margin-top: 40px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        animation: fadeInUp 1.2s ease-out forwards;
+        opacity: 0;
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box;
+        max-width: 900px; /* Match container max-width */
+      }
+      .nba-description p {
+        /* Styling for paragraphs */
+        font-size: clamp(1rem, 1.5vw, 1.1rem); /* Responsive font size */
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 15px;
+        line-height: 1.7;
+        text-align: justify;
+      }
+      .nba-description a {
+        /* Styling for links */
+        color: #fca311;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+      .nba-description a:hover {
+        color: #ffc947;
+        text-decoration: underline;
+      }
+      .nba-description strong {
+        /* Styling for bold text */
+        color: white;
+        font-weight: 700;
+      }
+      .nba-description h3 {
+        /* Styling for H3s within the description */
+        font-size: clamp(1.4rem, 3vw, 1.8rem); /* Responsive font size */
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #fca311;
+        text-align: center;
+        font-weight: 800;
+      }
+
+      /* --- Responsive Adjustments for Navbar & Layout --- */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-wrap: wrap; /* Allow items to wrap */
+          padding: 10px 20px;
+        }
+        .navbar .logo {
+          margin-right: auto; /* Push logo to the far left */
+        }
+        .hamburger-menu {
+          display: block; /* Show hamburger on smaller screens */
+          margin-left: auto; /* Push hamburger to the right */
+          font-size: 2rem; /* Size of the hamburger icon */
+          padding: 0 10px; /* Padding around the hamburger */
+        }
+        .navbar .nav-links {
+          display: none; /* Hide nav links by default on mobile */
+          flex-direction: column;
+          width: 100%; /* Make nav links take full width */
+          text-align: center;
+          margin-top: 15px;
+          background-color: rgba(
+            0,
+            0,
+            0,
+            0.6
+          ); /* Darker background for mobile menu */
+          backdrop-filter: blur(10px);
+          border-radius: 8px;
+          padding-bottom: 10px; /* Add some padding at the bottom */
+        }
+        .navbar .nav-links.active {
+          display: flex; /* Show nav links when active */
+        }
+        .navbar .nav-links li {
+          margin: 10px 0; /* Space out list items vertically */
+          width: 100%; /* Make list items take full width */
+        }
+        .navbar .nav-links a {
+          padding: 10px 20px; /* Padding for nav links */
+          font-size: 1.2rem; /* Slightly larger font for mobile */
+        }
+
+        /* Adjustments for the Version 2 button in the mobile menu */
+        .navbar .nav-links .version-2-button {
+          margin-left: 0; /* Remove left margin */
+          margin-top: 10px; /* Add top margin */
+          width: 80%; /* Make button wider */
+          display: block; /* Ensure it takes block space */
+          margin-left: auto; /* Center it */
+          margin-right: auto; /* Center it */
+          padding: 10px 15px; /* Adjust padding */
+          font-size: 1.1rem;
+        }
+
+        /* Adjust main content spacing */
+        .nba-section-title {
+          margin-top: 0; /* Remove top margin when hamburger is active */
+          font-size: clamp(2rem, 5vw, 3rem); /* Adjust for mobile */
+        }
+        .matches-container,
+        .nba-description {
+          padding: 0 10px; /* Reduce padding on very small screens */
+        }
+        .row {
+          flex-direction: column; /* Stack columns vertically on very small screens */
+          align-items: flex-start; /* Align items to the start */
+        }
+        .row > div {
+          width: 100%; /* Make columns take full width */
+          padding: 5px 0; /* Add vertical padding */
+          justify-content: center; /* Center content within stacked columns */
+        }
+        .row > div:nth-child(2) {
+          /* Match title column */
+          padding-left: 0; /* Remove left padding */
+          text-align: center; /* Center match title */
+        }
+        #leaguenames,
+        #timeofthematch {
+          text-align: center; /* Center league name and time */
+          width: 100%; /* Full width for centered text */
+        }
+        #timeofthematch .live {
+          font-size: 1rem; /* Adjust live indicator size */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar .logo img {
+          height: 40px;
+        }
+        .navbar .logo {
+          font-size: 1.5rem;
+        }
+        .navbar .nav-links a {
+          font-size: 1rem;
+        }
+        .nba-section-title {
+          font-size: clamp(2rem, 5vw, 2.5rem); /* Adjust for smallest screens */
+        }
+        .nba-description p,
+        .nba-description h3,
+        .nba-description li {
+          font-size: clamp(1rem, 1.5vw, 1rem); /* Adjust for smallest screens */
+        }
+      }
+
+      /* --- Animations --- */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animations on load */
+      .nba-section-title.animate,
+      .matches-container.animate,
+      .nba-description.animate {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="https://www.sportsurge.uno" class="logo">
+        <span>Sportsurge</span>
+      </a>
+
+      <!-- Hamburger Icon for Mobile -->
+      <div class="hamburger-menu">☰</div>
+      <!-- Hamburger icon -->
+
+      <ul class="nav-links">
+        <!-- Direct links for Sports -->
+        <li><a href="https://www.sportsurge.uno/soccer.html">Soccer</a></li>
+        <li><a href="https://www.sportsurge.uno/nba.html">Basketball</a></li>
+        <li><a href="https://www.sportsurge.uno/nfl.html">Football</a></li>
+        <li><a href="https://www.sportsurge.uno/boxing.html">Boxing</a></li>
+        <li><a href="https://www.sportsurge.uno/ufc.html">MMA</a></li>
+        <li><a href="https://www.sportsurge.uno/f1.html">Motor Sports</a></li>
+        <li><a href="https://www.sportsurge.uno/nhl.html">Hockey</a></li>
+        <li><a href="https://www.sportsurge.uno/mlb.html">MLB</a></li>
+        <li><a href="https://www.sportsurge.uno/tennis.html">Tennis</a></li>
+        <li><a href="https://www.sportsurge.uno/wwe.html">WWE</a></li>
+
+        <!-- Version 2 Button -->
+        <li>
+          <a href="https://www.sportsurge.uno/v2.html" class="version-2-button"
+            >Version 2</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Content Wrapper to push footer down -->
+    <div class="content-wrapper">
+      <!-- NBA Section Title -->
+      <h2 class="nba-section-title">Sportsurge NBA Streams</h2>
+
+      <!-- Match Cards Container -->
+      <div class="matches-container">
+        <!-- Placeholder for dynamically loaded NBA games -->
+        <div id="nba"></div>
+        <div id="nba-summer-leauge"></div>
+        <div id="wnba"></div>
+
+        <!-- If no games are dynamically loaded, show a message -->
+        <div id="no-games-message" style="display: none">
+          <p>No live NBA games scheduled at the moment. Check back soon!</p>
+        </div>
+      </div>
+
+      <!-- Descriptive Text -->
+      <div class="nba-description">
+        <p>
+          <b>Sportsurge NBA Reddit streams</b>. Many fans search for this term
+          to find ways to watch NBA games online. This guide will help you
+          understand how people search for
+          <a href="https://www.sportsurge.uno">Sportsurge</a> NBA content and
+          how to find what you're looking for at all sports events. We'll break
+          down common search queries and what they reveal about user intent.
+        </p>
+        <h3>Sportsurge NBA All-Star Game</h3>
+        <p>
+          Also watch:
+          <b
+            ><a
+              href="https://v3.sportsurge.uno/#NBA ALL STAR GAME "
+              target="_blank"
+              >NBA All-Star Game 2025 Live</a
+            ></b
+          >
+        </p>
+        <h3>Sportsurge NBA</h3>
+        <p>
+          Looking for your NBA live events? Sportsurge NBA offers a
+          comprehensive hub for accessing NBA streaming links, bringing you
+          closer to every slam dunk and buzzer-beater. We gather links from
+          across the web, offering a convenient way to catch your favorite teams
+          in action. While we strive to provide a seamless experience, please
+          remember that stream availability and high quality. Enjoy the game,
+          and stay tuned for the latest updates and links to all your NBA
+          streams, with Sportsurge the best sports streaming site.
+        </p>
+        <h3>How to Watch NBA Streams on Sportsurge</h3>
+        <p>
+          To access free
+          <b><a href="https://www.sportsurge.uno/p/nba.html">NBA streams</a></b>
+          on Sportsurge, follow these steps.<br />
+          Click here to watch NBA streams now and never miss a moment of the
+          action!
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        © 2025 Sportsurge. All rights reserved. • Stream your favorite sports
+        live.
+      </p>
+    </footer>
+
+    <script src="https://korbegy.github.io/streameast/js/script2.js"></script>
+    <script src="https://korbegy.github.io/streameast/js/365scores2.js"></script>
+
+    <script>
+      // JavaScript for mobile menu toggle
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Mock function to simulate dynamic game loading (if you had an API)
+      // Replace with actual API calls if you have NBA game data to fetch.
+      function loadNBAContent() {
+        const nbaContainer = document.getElementById("matchesContainer");
+        let gamesFound = false;
+
+        // Example of how you might add dynamically loaded games if you had an API
+        // For now, we'll rely on the static 'NBA ALL-STAR GAME' card and display a message if no others are loaded.
+
+        // If you had an API to fetch NBA games:
+        // fetch('YOUR_NBA_API_ENDPOINT')
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     data.games.forEach(game => {
+        //       if (game.league === 'NBA' && game.status === 'live') {
+        //         const cardHtml = `<div class="row" onclick="window.open('${game.link}', '_blank')">...</div>`;
+        //         nbaContainer.insertAdjacentHTML('beforeend', cardHtml);
+        //         gamesFound = true;
+        //       }
+        //     });
+        //     if (!gamesFound) {
+        //       document.getElementById('no-games-message').style.display = 'block';
+        //     }
+        //   })
+        //   .catch(error => {
+        //     console.error('Error fetching NBA games:', error);
+        //     document.getElementById('no-games-message').style.display = 'block';
+        //   });
+
+        // For now, we'll just check if there are any specific game cards present
+        // The static "NBA ALL-STAR GAME" and example cards are included directly in HTML,
+        // so we check for their presence.
+        if (nbaContainer.querySelector(".row")) {
+          gamesFound = true;
+        }
+
+        if (!gamesFound) {
+          document.getElementById("no-games-message").style.display = "block";
+        } else {
+          document.getElementById("no-games-message").style.display = "none";
+        }
+      }
+
+      // Ensure DOM is fully loaded before trying to manipulate content
+      document.addEventListener("DOMContentLoaded", () => {
+        // Animation trigger on DOM load for content sections
+        document.querySelector(".nba-section-title").classList.add("animate");
+        document.querySelector(".matches-container").classList.add("animate");
+        document
+          .querySelector(".nba-description")
+          .classList.list.add("animate");
+
+        loadNBAContent(); // Execute the function to manage visibility of no-games message
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Sportsurge Boxing: Live Streams, Schedules & Fight Info</title>
+    <meta
+      name="description"
+      content="Watch free live boxing streams online with Sportsurge. Get schedules, fight details, and reliable streams for all major boxing events, including PPVs and Fight Nights."
+    />
+    <meta
+      name="keywords"
+      content="Sportsurge Boxing, live boxing streams, free boxing streams, watch boxing online, boxing schedule, boxing tonight, boxing PPV, MMA streams, reddit boxing streams, boxing fights, live boxing events"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="Sportsurge Boxing: Live Streams, Schedules & Fight Info"
+    />
+    <meta
+      property="og:description"
+      content="Watch free live boxing streams online with Sportsurge. Get schedules, fight details, and reliable streams for all major boxing events."
+    />
+    <meta property="og:image" content="https://i.ibb.co/jHjLctV/boxing.webp" />
+    <!-- Boxing specific image -->
+    <meta
+      property="og:url"
+      content="https://www.example.com/sportsurge-boxing-page"
+    />
+    <!-- Your actual page URL -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sportsurge Boxing: Live Streams, Schedules & Fight Info"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch free live boxing streams online with Sportsurge. Get schedules, fight details, and reliable streams for all major boxing events."
+    />
+    <meta name="twitter:image" content="https://i.ibb.co/jHjLctV/boxing.webp" />
+    <!-- Boxing specific image -->
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <!-- Optional: Your Twitter handle -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Replace with your favicon path -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0d0d0d 0%,
+          #260000 100%
+        ); /* Dark gradient background */
+        color: #e0e0e0; /* Light gray for text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: #ff4500; /* Vibrant orange-red for selection */
+        color: white;
+      }
+
+      /* --- Container & Layout --- */
+      .page-container {
+        width: 100%;
+        max-width: 960px; /* Slightly wider content area */
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* --- Page Title and Intro --- */
+      .page-intro {
+        margin-bottom: 40px;
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        width: 100%;
+      }
+      .page-intro h3 {
+        font-size: 3rem; /* Larger title */
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        margin-bottom: 15px;
+        letter-spacing: 1.5px;
+        color: #ffffff; /* Pure white */
+        text-shadow: 0 0 15px rgba(255, 69, 0, 0.5); /* Orange-red glow */
+      }
+      .page-intro p {
+        color: #cccccc; /* Slightly muted white */
+        font-size: 1.2rem; /* Larger paragraph text */
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* --- Match Cards Section --- */
+      .match-list {
+        width: 100%;
+        margin-top: 30px;
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+        display: grid;
+        grid-template-columns: 1fr; /* Single column by default */
+        gap: 15px; /* Spacing between match cards */
+      }
+
+      /* Responsive adjustments for match cards */
+      @media (min-width: 768px) {
+        .match-list {
+          grid-template-columns: 1fr; /* Keep single column on larger screens for simplicity */
+        }
+      }
+
+      .match-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 25px; /* Increased padding */
+        background: rgba(255, 255, 255, 0.04); /* Subtle white background */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from link */
+        color: inherit; /* Inherit text color */
+        text-align: left; /* Align text to the left */
+      }
+      .match-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4); /* Stronger orange-red glow */
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .league-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #ff8c00; /* Darker orange */
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        padding: 6px 12px;
+        background-color: rgba(255, 140, 0, 0.15); /* Semi-transparent orange */
+        border-radius: 6px;
+        flex-shrink: 0; /* Prevent shrinking */
+        margin-right: 15px; /* Space after league name */
+      }
+
+      .match-title {
+        flex-grow: 1; /* Allow match title to take available space */
+        font-size: 1.15rem; /* Slightly larger for match title */
+        font-weight: 700;
+        color: #ffffff; /* White for match title */
+        transition: color 0.3s ease;
+      }
+      .match-card:hover .match-title {
+        color: #ff8c00; /* Orange on hover */
+      }
+
+      .match-time {
+        font-size: 0.95rem;
+        color: #aaaaaa; /* Lighter gray for dates */
+        font-weight: 400;
+        margin-left: 15px; /* Space before date */
+        white-space: nowrap; /* Prevent wrapping */
+        flex-shrink: 0; /* Prevent shrinking */
+      }
+
+      /* --- Live Indicator --- */
+      .live-indicator {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ff4500; /* Bright orange-red */
+        margin-left: 15px;
+        animation: pulse 1.5s infinite; /* Pulsing animation */
+      }
+
+      /* --- SEO Text and Additional Info --- */
+      .boxing-seo-text {
+        margin-top: 60px; /* More space above SEO text */
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.4); /* Darker background */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        animation: fadeInUp 1.5s ease-out forwards;
+        opacity: 0;
+        width: 100%;
+      }
+      .boxing-seo-text h3 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        color: #ff8c00; /* Orange accent */
+        text-align: center;
+        font-weight: 700;
+      }
+      .boxing-seo-text p {
+        font-size: 1.15rem;
+        color: #cccccc;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .boxing-seo-text p a {
+        color: #ff8c00;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+      .boxing-seo-text p a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+      .boxing-seo-text p strong {
+        color: #ffffff; /* White for strong emphasis */
+        font-weight: 700;
+      }
+      .boxing-seo-text ul {
+        list-style: disc inside;
+        padding-left: 25px;
+        margin-top: 25px;
+        text-align: left;
+      }
+      .boxing-seo-text li {
+        margin-bottom: 12px;
+        color: #dddddd;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+      .boxing-seo-text li strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      /* --- Animations --- */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Apply animations on load */
+      .page-intro,
+      .match-list,
+      .boxing-seo-text {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+
+      .page-intro.animate,
+      .match-list.animate,
+      .boxing-seo-text.animate {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Page Intro -->
+      <div class="page-intro">
+        <h3>Sportsurge Free Boxing Live Stream</h3>
+        <p>
+          Watch live stream reddit boxing free. You can watch live boxing
+          tonight fights free on Sportsurge boxing. Explore schedules, fight
+          details, and reliable streams for all major boxing events.
+        </p>
+      </div>
+
+      <!-- Match Cards Container -->
+      <div class="match-list">
+        <!-- BOXING SPECIAL FIGHT -->
+        <a
+          href="https://boxing.streameastlive.uno/#Dzmitry%20Asanau%20vs.%20Francesco%20Patera"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Dzmitry Asanau vs Francesco Patera</span>
+          <span class="match-time">Thursday, Apr 10</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Jaron%20Ennis%20vs.%20Eimantas%20Stanionis"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Jaron Ennis vs Eimantas Stanionis</span>
+          <span class="match-time">Saturday, Apr 12</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Jordan%20White%20vs.%20Matias%20Romero"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Jordan White vs Matias Romero</span>
+          <span class="match-time">Saturday, Apr 12</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Kevin%20Brown%20vs.%20Esteuri%20Suero"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Kevin Brown vs Esteuri Suero</span>
+          <span class="match-time">Friday, Apr 18</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Sadriddin%20Akhmedov%20vs.%20Elias%20Espadas"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Sadriddin Akhmedov vs Elias Espadas</span>
+          <span class="match-time">Saturday, Apr 19</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Dalton%20Smith%20vs.%20Mathieu%20Germain"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Dalton Smith vs Mathieu Germain</span>
+          <span class="match-time">Saturday, Apr 19</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Anthony%20Garnica%20vs.%20Aston%20Palicte"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Anthony Garnica vs Aston Palicte</span>
+          <span class="match-time">Saturday, Apr 19</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Sergey%20Kovalev%20vs.%20Artur%20Mann"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Sergey Kovalev vs Artur Mann</span>
+          <span class="match-time">Saturday, Apr 19</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Gabriela%20Fundora%20vs.%20Marilyn%20Badillo"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Gabriela Fundora vs Marilyn Badillo</span>
+          <span class="match-time">Saturday, Apr 19</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Ben%20Whittaker%20vs.%20Liam%20Cameron"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Ben Whittaker vs Liam Cameron</span>
+          <span class="match-time">Sunday, Apr 20</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Yair%20Gallardo%20vs.%20David%20Stevens"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Yair Gallardo vs David Stevens</span>
+          <span class="match-time">Friday, Apr 25</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Chris%20Eubank%20Jr.%20vs.%20Conor%20Benn"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Chris Eubank Jr. vs Conor Benn</span>
+          <span class="match-time">Saturday, Apr 26</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Ryan%20Garcia%20vs.%20Rolando%20Romero"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Ryan Garcia vs Rolando Romero</span>
+          <span class="match-time">Friday, May 2</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Saul%20'Canelo'%20Alvarez%20vs.%20William%20Scull"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title"
+            >Saul 'Canelo' Alvarez vs William Scull</span
+          >
+          <span class="match-time">Saturday, May 3</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Naoya%20Inoue%20vs.%20Ramon%20Cardenas"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Naoya Inoue vs Ramon Cardenas</span>
+          <span class="match-time">Sunday, May 4</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Andreas%20Katzourakis%20vs.%20Roberto%20Cruz"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Andreas Katzourakis vs Roberto Cruz</span>
+          <span class="match-time">Friday, May 9</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Dainier%20Pero%20vs.%20Cesar%20Navarro"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Dainier Pero vs Cesar Navarro</span>
+          <span class="match-time">Friday, May 9</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Anthony%20Cacace%20vs.%20Leigh%20Wood"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Anthony Cacace vs Leigh Wood</span>
+          <span class="match-time">Saturday, May 10</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Emanuel%20Navarrete%20vs.%20Charly%20Suarez"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Emanuel Navarrete vs Charly Suarez</span>
+          <span class="match-time">Saturday, May 10</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Souleymane%20Cissokho%20vs.%20Egis%20Kavaliauskas"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title"
+            >Souleymane Cissokho vs Egis Kavaliauskas</span
+          >
+          <span class="match-time">Saturday, May 10</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Erickson%20Lubin%20vs.%20Ardreal%20Holmes"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Erickson Lubin vs Ardreal Holmes</span>
+          <span class="match-time">Saturday, May 10</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Johnny%20Fisher%20vs.%20Dave%20Allen"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Johnny Fisher vs Dave Allen</span>
+          <span class="match-time">Saturday, May 17</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Terri%20Harper%20vs.%20Natalie%20Zimmerman"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Terri Harper vs Natalie Zimmerman</span>
+          <span class="match-time">Friday, May 23</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Josh%20Taylor%20vs.%20Ekow%20Essuman"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Josh Taylor vs Ekow Essuman</span>
+          <span class="match-time">Saturday, May 24</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Angelo%20Leo%20vs.%20Tomoki%20Kameda"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Angelo Leo vs Tomoki Kameda</span>
+          <span class="match-time">Saturday, May 24</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Yoshiki%20Takei%20vs.%20Yuttapong%20Tongdee"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Yoshiki Takei vs Yuttapong Tongdee</span>
+          <span class="match-time">Wednesday, May 28</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Caleb%20Plant%20vs.%20Jose%20Armando%20Resendiz"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Caleb Plant vs Jose Armando Resendiz</span>
+          <span class="match-time">Saturday, May 31</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Fabio%20Wardley%20vs.%20Jarrell%20Miller"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Fabio Wardley vs Jarrell Miller</span>
+          <span class="match-time">Saturday, Jun 7</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Jai%20Opetaia%20vs.%20Claudio%20Squeo"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Jai Opetaia vs Claudio Squeo</span>
+          <span class="match-time">Sunday, Jun 8</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Vito%20Mielnicki%20vs.%20Kamil%20Gardzielik"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Vito Mielnicki vs Kamil Gardzielik</span>
+          <span class="match-time">Saturday, Jun 21</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Deontay%20Wilder%20vs.%20Tyrrell%20Herndon"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Deontay Wilder vs Tyrrell Herndon</span>
+          <span class="match-time">Friday, Jun 27</span>
+        </a>
+
+        <a
+          href="https://boxing.streameastlive.uno/#Katie%20Taylor%20vs.%20Amanda%20Serrano"
+          target="_blank"
+          class="match-card"
+        >
+          <span class="league-name">Boxing</span>
+          <span class="match-title">Katie Taylor vs Amanda Serrano</span>
+          <span class="match-time">Friday, Jul 11</span>
+        </a>
+        <!-- END OF BOXING SPECIAL FIGHT -->
+      </div>
+
+      <div class="boxing-seo-text">
+        <h3>Your Ultimate Boxing Streaming Hub</h3>
+        <p>
+          Discover all free
+          <b
+            >sportsurge
+            <a href="https://www.streameastlive.uno/p/boxing.html">boxing</a>
+            streams</b
+          >. With Sportsurge v3, you can access all <b>boxing streaming</b> and
+          enjoy <b>reddit streams live</b>. Simply select your desired fight
+          from the list below to watch boxing streams live.
+        </p>
+        <ul>
+          <li>Explore <b>sportsurge</b> coverage of Mike Tyson</li>
+          <li>Follow <b>sportsurge</b> updates on Jake Paul</li>
+          <li>
+            Catch live streams for <b>sportsurge</b> Canelo Alvarez fights
+          </li>
+          <li>Watch <b>sportsurge</b> Gervonta Davis bouts</li>
+          <li>Stay updated on <b>sportsurge</b> David Benavidez</li>
+          <li>Never miss a fight with <b>sportsurge</b> David Morrell Jr</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Script Tags -->
+    <script src="https://korbegy.github.io/streameast/js/script2.js"></script>
+    <script src="https://korbegy.github.io/streameast/js/365scores2.js"></script>
+    <script>
+      function updateMatchDates() {
+        const matchCards = document.querySelectorAll(".match-card");
+
+        matchCards.forEach((card) => {
+          const timeElement = card.querySelector(".match-time");
+          const dateText = timeElement.textContent.trim();
+
+          if (dateText) {
+            const parts = dateText.split(","); // e.g., "Saturday, Apr 12"
+            if (parts.length >= 2) {
+              const dayOfWeek = parts[0].trim();
+              const datePart = parts[1].trim();
+              const monthDay = datePart.split(" ");
+
+              if (monthDay.length >= 2) {
+                const month = monthDay[0].trim();
+                const dayNumber = monthDay[1].trim();
+
+                // Attempt to create a date object. Month names should be standard English.
+                const year = new Date().getFullYear();
+                const matchDateObj = new Date(`${month} ${dayNumber}, ${year}`);
+
+                // Check if the date is valid
+                if (!isNaN(matchDateObj.getTime())) {
+                  const today = new Date();
+                  today.setHours(0, 0, 0, 0); // Reset time for accurate day comparison
+                  matchDateObj.setHours(0, 0, 0, 0); // Reset time for accurate day comparison
+
+                  // Check if the match date is today
+                  if (matchDateObj.getTime() === today.getTime()) {
+                    // Check if a live indicator is already present
+                    if (!timeElement.innerHTML.includes("live-indicator")) {
+                      timeElement.innerHTML = `<span class="live-indicator">LIVE NOW!</span>`;
+                    }
+                  } else {
+                    // If it's not today, ensure the original date text is displayed
+                    timeElement.textContent = dateText;
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // Trigger the date update function when the DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        updateMatchDates(); // Run immediately
+
+        // Add 'animate' class to elements to trigger animations
+        document.querySelector(".page-intro").classList.add("animate");
+        document.querySelector(".match-list").classList.add("animate");
+        document.querySelector(".boxing-seo-text").classList.add("animate");
+
+        // Optionally, set an interval to re-check for live matches
+        // setInterval(updateMatchDates, 60000); // Check every minute
+      });
+    </script>
+  </body>
+</html>
