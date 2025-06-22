@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://www.sportsurge.uno/index.html" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      SportSurge - Live Sports Streams & Schedules | NFL, NBA, Soccer, Tennis,
+      Boxing & More
+    </title>
+    <meta
+      name="description"
+      content="Watch live sports streams and check schedules for NFL, NBA, Soccer, Tennis, Boxing, MMA, and more with Sportsurge v3. Your ultimate source for global sports action."
+    />
+    <meta
+      name="keywords"
+      content="Sportsurge, live sports streams, sports streaming, NFL streams, NBA streams, soccer streams, tennis live, boxing streams, MMA live, hockey streams, baseball live, watch sports online, sports schedule, live events"
+    />
+    <meta name="robots" content="index, follow" />
+    <!-- Allows search engines to index and follow links -->
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="Sportsurge - Live Sports Streams & Schedules"
+    />
+    <meta
+      property="og:description"
+      content="Watch live sports streams and check schedules for NFL, NBA, Soccer, Tennis, Boxing, MMA, and more with Sportsurge v3."
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/KXMSsb4/football.webp"
+    />
+    <!-- Replace with a representative image URL -->
+    <meta property="og:url" content="https://www.sportsurge.uno" />
+    <!-- Your actual page URL -->
+    <!-- IMPORTANT: Replace "https://www.sportsurge.uno" with your actual URL! -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sportsurge - Live Sports Streams & Schedules"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch live sports streams and check schedules for NFL, NBA, Soccer, Tennis, Boxing, MMA, and more with Sportsurge v3."
+    />
+    <meta
+      name="twitter:image"
+      content="https://i.ibb.co/KXMSsb4/football.webp"
+    />
+    <!-- Replace with a representative image URL -->
+    <!-- IMPORTANT: Replace "https://www.sportsurge.uno" with your actual URL! -->
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <!-- Optional: Your Twitter handle -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Replace with a path to your favicon -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a0000 0%,
+          #4a0000 100%
+        ); /* Deep red gradient */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure body takes at least full viewport height */
+        overflow-x: hidden; /* Prevent horizontal scroll */
+        padding: 0; /* Reset padding for body to allow navbar to be at the very top */
+        box-sizing: border-box;
+      }
+
+      ::selection {
+        background: #ff0000; /* Red selection */
+        color: white;
+      }
+
+      /* --- Navbar Styles --- */
+      .navbar {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.4
+        ); /* Semi-transparent black background */
+        backdrop-filter: blur(10px); /* Blurring effect for a modern look */
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between; /* Pushes logo to left, nav items to right */
+        align-items: center;
+        position: sticky; /* Makes the navbar stick to the top */
+        top: 0;
+        z-index: 1000; /* Ensures navbar is above other content */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar .logo img {
+        height: 45px; /* Adjust logo size as needed */
+        margin-right: 15px;
+        vertical-align: middle; /* Helps align image properly */
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .navbar .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center; /* Vertically center items in the nav-links */
+      }
+
+      .navbar .nav-links li {
+        margin-left: 30px; /* Space between nav items */
+      }
+
+      .navbar .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding-bottom: 5px; /* For the underline effect */
+        display: block; /* Needed for padding and hover area */
+      }
+
+      .navbar .nav-links a:hover {
+        color: #ff0000; /* Red on hover */
+        border-bottom: 2px solid #ff0000; /* Red underline on hover */
+      }
+
+      /* Style for the Version 2 button */
+      .navbar .nav-links .version-2-button {
+        background-color: #ff0000; /* Red background */
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 700;
+        transition: background-color 0.3s ease;
+        border-bottom: none !important; /* Remove bottom border for button */
+        margin-left: 40px; /* More space before the button */
+      }
+
+      .navbar .nav-links .version-2-button:hover {
+        background-color: #cc0000; /* Darker red on hover */
+        color: white;
+        border-bottom: none !important; /* Ensure no border on hover */
+      }
+
+      /* Hamburger Menu for Mobile */
+      .hamburger-menu {
+        display: none; /* Hidden by default on larger screens */
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+        padding: 0 10px; /* Add some padding */
+      }
+
+      /* --- Main Content Area --- */
+      .content-wrapper {
+        flex-grow: 1; /* Allows this section to take up available vertical space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px; /* Add some padding around content */
+        box-sizing: border-box;
+      }
+
+      /* --- Header Section --- */
+      .header-container {
+        text-align: center;
+        margin-top: 3rem; /* Add some space above the header */
+        margin-bottom: 4rem;
+        animation: fadeInDown 1s ease-out forwards;
+        width: 100%; /* Ensure it takes full width */
+        padding: 0 20px; /* Add padding if content is narrow */
+        box-sizing: border-box;
+      }
+
+      #title-v3 {
+        color: white;
+        font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+        font-weight: 800; /* Bold title */
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+        text-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red glow effect */
+      }
+
+      .intro-text {
+        font-weight: 800;
+        font-size: clamp(2rem, 4vw, 3.5rem); /* Responsive font size */
+        text-align: center;
+        color: white;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      .header-container p {
+        color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Slightly translucent white for readability */
+        font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive font size */
+        max-width: 700px; /* Slightly increased max-width for better readability on larger screens */
+        margin: 0 auto; /* Center the paragraph */
+        line-height: 1.6;
+      }
+
+      /* --- Sports Grid --- */
+      #sports-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Spacing between grid items */
+        width: 100%;
+        max-width: 1200px; /* Max width for the grid */
+        padding: 20px 0;
+        animation: fadeInUp 1.5s ease-out forwards; /* Fade in the grid */
+      }
+
+      .col {
+        flex: 1 1 200px; /* Responsive flex sizing, min width 200px */
+        max-width: 250px; /* Max width for individual items */
+        box-sizing: border-box;
+        text-align: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        background: rgba(255, 255, 255, 0.05); /* Subtle background for cards */
+        border-radius: 15px; /* Rounded corners for cards */
+        padding: 15px;
+      }
+
+      .col:hover {
+        transform: translateY(-10px) scale(1.05); /* Lift and slightly enlarge on hover */
+        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+      }
+
+      .big-selection-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        height: 100%; /* Ensure button fills the col height */
+        padding: 0; /* Remove internal padding, handled by .col */
+        border-radius: 12px; /* Slightly less rounded than .col */
+        overflow: hidden; /* Clip image corners */
+        transition: background-color 0.3s ease; /* Smooth transition for potential background change */
+      }
+
+      .big-selection-button:hover {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); /* Subtle hover effect on the button itself */
+      }
+
+      .img-fluid {
+        width: 100%;
+        height: 180px; /* Fixed height for images */
+        object-fit: cover; /* Ensure images cover the area without distortion */
+        border-radius: 10px; /* Rounded corners for images */
+        margin-bottom: 15px; /* Space between image and text */
+      }
+
+      .button-sub-text {
+        margin-top: 0; /* Remove default top margin */
+        font-size: 1.2rem;
+        font-weight: 700; /* Bold text */
+        letter-spacing: 0.5px;
+        text-transform: uppercase; /* Uppercase text */
+        padding: 0 10px; /* Add some padding around text */
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+      }
+
+      /* --- Footer Styles --- */
+      footer {
+        text-align: center;
+        padding: 2rem 1rem; /* Add some padding to the footer */
+        width: 100%;
+        margin-top: auto; /* Pushes footer to the bottom */
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      footer p {
+        margin: 0; /* Remove default paragraph margin in footer */
+      }
+
+      /* --- Responsive Adjustments --- */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-wrap: wrap; /* Allow items to wrap */
+          padding: 10px 20px;
+        }
+        .navbar .logo {
+          margin-right: auto; /* Push logo to the far left */
+        }
+        .hamburger-menu {
+          display: block; /* Show hamburger on smaller screens */
+          margin-left: auto; /* Push hamburger to the right */
+          font-size: 2rem; /* Size of the hamburger icon */
+          padding: 0 10px; /* Padding around the hamburger */
+        }
+        .navbar .nav-links {
+          display: none; /* Hide nav links by default on mobile */
+          flex-direction: column;
+          width: 100%; /* Make nav links take full width */
+          text-align: center;
+          margin-top: 15px;
+          background-color: rgba(
+            0,
+            0,
+            0,
+            0.6
+          ); /* Darker background for mobile menu */
+          backdrop-filter: blur(10px);
+          border-radius: 8px;
+          padding-bottom: 10px; /* Add some padding at the bottom */
+        }
+        .navbar .nav-links.active {
+          display: flex; /* Show nav links when active */
+        }
+        .navbar .nav-links li {
+          margin: 10px 0; /* Space out list items vertically */
+          width: 100%; /* Make list items take full width */
+        }
+        .navbar .nav-links a {
+          padding: 10px 20px; /* Padding for nav links */
+          font-size: 1.2rem; /* Slightly larger font for mobile */
+        }
+
+        /* Adjustments for the Version 2 button in the mobile menu */
+        .navbar .nav-links .version-2-button {
+          margin-left: 0; /* Remove left margin */
+          margin-top: 10px; /* Add top margin */
+          width: 80%; /* Make button wider */
+          display: block; /* Ensure it takes block space */
+          margin-left: auto; /* Center it */
+          margin-right: auto; /* Center it */
+          padding: 10px 15px; /* Adjust padding */
+          font-size: 1.1rem;
+        }
+
+        /* Adjust main content spacing */
+        .header-container {
+          margin-top: 0; /* Remove top margin when hamburger is active */
+          margin-bottom: 3rem;
+        }
+        #title-v3 {
+          font-size: clamp(2rem, 5vw, 3rem); /* Adjust for mobile */
+        }
+        .intro-text {
+          font-size: clamp(1.8rem, 4vw, 2.5rem); /* Adjust for mobile */
+        }
+        .header-container p {
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem); /* Adjust for mobile */
+        }
+        .col {
+          flex: 1 1 180px;
+          max-width: 180px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar .logo img {
+          height: 40px;
+        }
+        .navbar .logo {
+          font-size: 1.5rem;
+        }
+        .navbar .nav-links a {
+          font-size: 1rem;
+        }
+        .header-container {
+          margin-bottom: 2.5rem;
+        }
+        #title-v3 {
+          font-size: clamp(2rem, 5vw, 2.5rem); /* Adjust for smallest screens */
+        }
+        .intro-text {
+          font-size: clamp(1.6rem, 4vw, 2rem); /* Adjust for smallest screens */
+        }
+        .header-container p {
+          font-size: clamp(
+            0.9rem,
+            1.5vw,
+            1rem
+          ); /* Adjust for smallest screens */
+        }
+        .col {
+          flex: 1 1 90%; /* Stack vertically on very small screens */
+          max-width: 90%;
+        }
+      }
+
+      /* --- Animations --- */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="https://www.sportsurge.uno" class="logo">
+        
+        <span>Sportsurge</span>
+      </a>
+
+      <!-- Hamburger Icon for Mobile -->
+      <div class="hamburger-menu">☰</div>
+      <!-- Hamburger icon -->
+
+      <ul class="nav-links">
+        <!-- Direct links for Sports -->
+        <li><a href="https://www.sportsurge.uno/soccer.html">Soccer</a></li>
+        <li><a href="https://www.sportsurge.uno/nba.html">Basketball</a></li>
+        <li><a href="https://www.sportsurge.uno/nfl.html">Football</a></li>
+        <li><a href="https://www.sportsurge.uno/boxing.html">Boxing</a></li>
+        <li><a href="https://www.sportsurge.uno/ufc.html">MMA</a></li>
+        <li><a href="https://www.sportsurge.uno/f1.html">Motor Sports</a></li>
+        <li><a href="https://www.sportsurge.uno/nhl.html">Hockey</a></li>
+        <li><a href="https://www.sportsurge.uno/mlb.html">Baseball</a></li>
+        <li><a href="https://www.sportsurge.uno/tennis.html">Tennis</a></li>
+        <li><a href="https://www.sportsurge.uno/wwe.html">WWE</a></li>
+
+        <!-- Version 2 Button -->
+        <li>
+          <a href="https://www.sportsurge.uno/v2.html" class="version-2-button"
+            >Version 2</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content-wrapper">
+      <header class="header-container">
+        <h2 id="title-v3">Sportsurge v3</h2>
+        <h3 class="intro-text">What do you want to watch today?</h3>
+        <p>
+          Sportsurge V3 helps fans from around the world watch their favorite
+          games, events, and more, all in one place.
+        </p>
+      </header>
+
+      <main id="sports-list" class="row">
+        <!-- The sports grid will remain here -->
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/soccer.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/crxjK1Q/soccer.webp"
+              alt="Soccer"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Soccer</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/nba.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/qC9wrtj/nba.webp"
+              alt="Basketball"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Basketball</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/nfl.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/KXMSsb4/football.webp"
+              alt="Football"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Football</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/boxing.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/jHjLctV/boxing.webp"
+              alt="Boxing"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Boxing</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/ufc.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/Q97VNR4/mma.webp"
+              alt="MMA"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">MMA</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/f1.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/v1kyhMv/motorsports.webp"
+              alt="Motor Sports"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Motor Sports</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/nhl.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/yFcSyMb/hockey.webp"
+              alt="Hockey"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Hockey</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/mlb.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://i.ibb.co/9yCDpxL/baseball.webp"
+              alt="Baseball"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Baseball</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/tennis.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://www.svgrepo.com/show/315897/tennis-ball.svg"
+              alt="Tennis"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">Tennis</p>
+          </a>
+        </div>
+        <div class="col">
+          <a
+            target="_blank"
+            href="https://www.sportsurge.uno/wwe.html"
+            class="big-selection-button"
+          >
+            <img
+              src="https://iili.io/2ZE95Ou.webp"
+              alt="WWE"
+              class="img-fluid"
+            />
+            <p class="button-sub-text">WWE</p>
+          </a>
+        </div>
+      </main>
+      <h3>Sportsurge</h3>
+      <p>
+        Your ultimate destination for finding live sports streams and up-to-date
+        schedules. Never miss a moment of the action! We aggregate links for top
+        leagues including NFL, NBA, MLB, NHL, Soccer, Formula 1, MMA, Boxing,
+        Tennis and more. Select a category below to dive in or click a stream to
+        watch.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        © 2025 Sportsurge. All rights reserved. • Stream your favorite sports
+        live.
+      </p>
+    </footer>
+
+    <script>
+      // JavaScript for mobile menu toggle
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
