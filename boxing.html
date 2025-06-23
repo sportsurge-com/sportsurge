@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -61,238 +62,397 @@
     />
     <style>
       /* --- Global Styles --- */
-      body {
-        margin: 0;
-        font-family: "Open Sans", sans-serif;
-        background: linear-gradient(
-          135deg,
-          #0d0d0d 0%,
-          #260000 100%
-        ); /* Dark gradient background */
-        color: #e0e0e0; /* Light gray for text */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        padding: 20px;
-        box-sizing: border-box;
-        overflow-x: hidden;
-      }
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #0d0d0d 0%,
+    #260000 100%
+  ); /* Dark gradient background */
+  color: #e0e0e0; /* Light gray for text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
-      ::selection {
-        background: #ff4500; /* Vibrant orange-red for selection */
-        color: white;
-      }
+::selection {
+  background: #ff4500; /* Vibrant orange-red for selection */
+  color: white;
+}
 
-      /* --- Container & Layout --- */
-      .page-container {
-        width: 100%;
-        max-width: 960px; /* Slightly wider content area */
-        margin: 0 auto;
-        text-align: center;
-      }
+/* --- Container & Layout --- */
+.page-container {
+  width: 100%;
+  max-width: 960px; /* Slightly wider content area */
+  margin: 0 auto;
+  text-align: center;
+}
 
-      /* --- Page Title and Intro --- */
-      .page-intro {
-        margin-bottom: 40px;
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0;
-        width: 100%;
-      }
-      .page-intro h3 {
-        font-size: 3rem; /* Larger title */
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        margin-bottom: 15px;
-        letter-spacing: 1.5px;
-        color: #ffffff; /* Pure white */
-        text-shadow: 0 0 15px rgba(255, 69, 0, 0.5); /* Orange-red glow */
-      }
-      .page-intro p {
-        color: #cccccc; /* Slightly muted white */
-        font-size: 1.2rem; /* Larger paragraph text */
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.7;
-      }
+/* --- Page Title and Intro --- */
+.page-intro {
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  width: 100%;
+}
+.page-intro h3 {
+  font-size: 3rem; /* Larger title */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+  color: #ffffff; /* Pure white */
+  text-shadow: 0 0 15px rgba(255, 69, 0, 0.5); /* Orange-red glow */
+}
+.page-intro p {
+  color: #cccccc; /* Slightly muted white */
+  font-size: 1.2rem; /* Larger paragraph text */
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
 
-      /* --- Match Cards Section --- */
-      .match-list {
-        width: 100%;
-        margin-top: 30px;
-        animation: fadeInUp 1s ease-out forwards;
-        opacity: 0;
-        display: grid;
-        grid-template-columns: 1fr; /* Single column by default */
-        gap: 15px; /* Spacing between match cards */
-      }
+/* --- Match Cards Section --- */
+.match-list {
+  width: 100%;
+  margin-top: 30px;
+  /* Remove initial animation styles if you want it to appear immediately */
+  /* animation: fadeInUp 1s ease-out forwards; */
+  /* opacity: 0; */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 15px; /* Spacing between match cards */
+}
 
-      /* Responsive adjustments for match cards */
-      @media (min-width: 768px) {
-        .match-list {
-          grid-template-columns: 1fr; /* Keep single column on larger screens for simplicity */
-        }
-      }
+/* Responsive adjustments for match cards */
+/* If you were using a framework like Bootstrap, you'd leverage its grid system.
+   Since we're not, we'll style based on our custom .match-card */
 
-      .match-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 25px; /* Increased padding */
-        background: rgba(255, 255, 255, 0.04); /* Subtle white background */
-        border-radius: 12px; /* Rounded corners */
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-          background-color 0.3s ease;
-        cursor: pointer;
-        text-decoration: none; /* Remove underline from link */
-        color: inherit; /* Inherit text color */
-        text-align: left; /* Align text to the left */
-      }
-      .match-card:hover {
-        transform: translateY(-6px) scale(1.01);
-        box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4); /* Stronger orange-red glow */
-        background-color: rgba(255, 255, 255, 0.08);
-      }
+.match-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 25px; /* Increased padding */
+  background: rgba(255, 255, 255, 0.04); /* Subtle white background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+  text-align: left; /* Align text to the left */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+.match-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4); /* Stronger orange-red glow */
+  background-color: rgba(255, 255, 255, 0.08);
+}
 
-      .league-name {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: #ff8c00; /* Darker orange */
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        padding: 6px 12px;
-        background-color: rgba(255, 140, 0, 0.15); /* Semi-transparent orange */
-        border-radius: 6px;
-        flex-shrink: 0; /* Prevent shrinking */
-        margin-right: 15px; /* Space after league name */
-      }
+.league-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff8c00; /* Darker orange */
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 12px;
+  background-color: rgba(255, 140, 0, 0.15); /* Semi-transparent orange */
+  border-radius: 6px;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-right: 15px; /* Space after league name */
+  margin-bottom: 10px; /* Add margin for wrapping */
+}
 
-      .match-title {
-        flex-grow: 1; /* Allow match title to take available space */
-        font-size: 1.15rem; /* Slightly larger for match title */
-        font-weight: 700;
-        color: #ffffff; /* White for match title */
-        transition: color 0.3s ease;
-      }
-      .match-card:hover .match-title {
-        color: #ff8c00; /* Orange on hover */
-      }
+.match-title {
+  flex-grow: 1; /* Allow match title to take available space */
+  font-size: 1.15rem; /* Slightly larger for match title */
+  font-weight: 700;
+  color: #ffffff; /* White for match title */
+  transition: color 0.3s ease;
+  margin-right: 15px; /* Space before date */
+  margin-bottom: 10px; /* Add margin for wrapping */
+}
+.match-card:hover .match-title {
+  color: #ff8c00; /* Orange on hover */
+}
 
-      .match-time {
-        font-size: 0.95rem;
-        color: #aaaaaa; /* Lighter gray for dates */
-        font-weight: 400;
-        margin-left: 15px; /* Space before date */
-        white-space: nowrap; /* Prevent wrapping */
-        flex-shrink: 0; /* Prevent shrinking */
-      }
+.match-time {
+  font-size: 0.95rem;
+  color: #aaaaaa; /* Lighter gray for dates */
+  font-weight: 400;
+  /* margin-left: 15px; */ /* Removed as we're using flexbox and spacing */
+  white-space: nowrap; /* Prevent wrapping */
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-bottom: 10px; /* Add margin for wrapping */
+}
 
-      /* --- Live Indicator --- */
-      .live-indicator {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #ff4500; /* Bright orange-red */
-        margin-left: 15px;
-        animation: pulse 1.5s infinite; /* Pulsing animation */
-      }
+/* --- Live Indicator --- */
+.live-indicator {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff4500; /* Bright orange-red */
+  /* margin-left: 15px; */ /* Removed as we're using flexbox and spacing */
+  animation: pulse 1.5s infinite; /* Pulsing animation */
+}
 
-      /* --- SEO Text and Additional Info --- */
-      .boxing-seo-text {
-        margin-top: 60px; /* More space above SEO text */
-        padding: 40px;
-        background-color: rgba(0, 0, 0, 0.4); /* Darker background */
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-        animation: fadeInUp 1.5s ease-out forwards;
-        opacity: 0;
-        width: 100%;
-      }
-      .boxing-seo-text h3 {
-        font-size: 2.2rem;
-        margin-bottom: 25px;
-        color: #ff8c00; /* Orange accent */
-        text-align: center;
-        font-weight: 700;
-      }
-      .boxing-seo-text p {
-        font-size: 1.15rem;
-        color: #cccccc;
-        margin-bottom: 20px;
-        line-height: 1.8;
-        text-align: justify;
-      }
-      .boxing-seo-text p a {
-        color: #ff8c00;
-        text-decoration: none;
-        font-weight: 700;
-        transition: color 0.3s ease, text-decoration 0.3s ease;
-      }
-      .boxing-seo-text p a:hover {
-        color: #ffffff;
-        text-decoration: underline;
-      }
-      .boxing-seo-text p strong {
-        color: #ffffff; /* White for strong emphasis */
-        font-weight: 700;
-      }
-      .boxing-seo-text ul {
-        list-style: disc inside;
-        padding-left: 25px;
-        margin-top: 25px;
-        text-align: left;
-      }
-      .boxing-seo-text li {
-        margin-bottom: 12px;
-        color: #dddddd;
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
-      .boxing-seo-text li strong {
-        color: #ffffff;
-        font-weight: 700;
-      }
+/* --- SEO Text and Additional Info --- */
+.boxing-seo-text {
+  margin-top: 60px; /* More space above SEO text */
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.4); /* Darker background */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  animation: fadeInUp 1.5s ease-out forwards;
+  opacity: 0;
+  width: 100%;
+}
+.boxing-seo-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #ff8c00; /* Orange accent */
+  text-align: center;
+  font-weight: 700;
+}
+.boxing-seo-text p {
+  font-size: 1.15rem;
+  color: #cccccc;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  text-align: justify;
+}
+.boxing-seo-text p a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+.boxing-seo-text p a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.boxing-seo-text p strong {
+  color: #ffffff; /* White for strong emphasis */
+  font-weight: 700;
+}
+.boxing-seo-text ul {
+  list-style: disc inside;
+  padding-left: 25px;
+  margin-top: 25px;
+  text-align: left;
+}
+.boxing-seo-text li {
+  margin-bottom: 12px;
+  color: #dddddd;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+.boxing-seo-text li strong {
+  color: #ffffff;
+  font-weight: 700;
+}
 
-      /* --- Animations --- */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+/* --- Animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        50% {
-          transform: scale(1.05);
-          opacity: 0.7;
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
-      /* Apply animations on load */
-      .page-intro,
-      .match-list,
-      .boxing-seo-text {
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0; /* Start hidden */
-      }
+/* Apply animations on load */
+/* Remove these if you want them to be static */
+/*
+.page-intro,
+.match-list,
+.boxing-seo-text {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
 
-      .page-intro.animate,
-      .match-list.animate,
-      .boxing-seo-text.animate {
-        opacity: 1;
-      }
+.page-intro.animate,
+.match-list.animate,
+.boxing-seo-text.animate {
+  opacity: 1;
+}
+*/
+
+/* --- Specific Fixes for your Row/Col Structure --- */
+/* Since you're using .row and .col, we'll assume a flexbox-based grid.
+   If you have a framework's CSS included, these might conflict or be redundant.
+   However, to make your existing HTML work with the new CSS, we'll target
+   those classes to restructure the match cards. */
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Crucial for responsiveness */
+  width: 100%;
+  margin-bottom: 15px; /* Spacing between rows if they stack */
+}
+
+/* Match card structure within your rows */
+.col.column.mt-1 { /* Targeting your specific class for the match card wrapper */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Distribute space between items */
+  padding: 18px 25px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  flex-wrap: wrap; /* Allow wrapping */
+  width: 100%; /* Take full width by default */
+}
+
+.col.column.mt-1:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Adjustments for the inner row structure */
+.col.column.mt-1 .row {
+  display: flex;
+  width: 100%;
+  align-items: center; /* Align inner items */
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Target specific columns for layout within the match card */
+.col-3 {
+  flex: 0 0 25%; /* Bootstrap-like percentage */
+  max-width: 25%;
+  padding-right: 10px; /* Spacing */
+  display: flex; /* For span alignment */
+  align-items: center;
+}
+.col-3 span { /* Targeting the league name */
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff8c00;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 12px;
+  background-color: rgba(255, 140, 0, 0.15);
+  border-radius: 6px;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.col-1 { /* This column appears to be empty in your HTML */
+  flex: 0 0 8.33%;
+  max-width: 8.33%;
+}
+
+.col-5 {
+  flex-grow: 1; /* Allow it to take available space */
+  flex-basis: 50%; /* Basic width */
+  max-width: 50%;
+  padding-left: 15px; /* Spacing */
+  padding-right: 15px; /* Spacing */
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  display: flex; /* For link alignment */
+  align-items: center;
+  flex-wrap: wrap; /* Ensure link text can wrap */
+}
+.col-5 a {
+  color: #ffffff; /* Default white for the link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.col.column.mt-1:hover .col-5 a {
+  color: #ff8c00;
+}
+
+#timeofthematch { /* Targeting the date column */
+  flex: 0 0 25%; /* Bootstrap-like percentage */
+  max-width: 25%;
+  padding-left: 10px; /* Spacing */
+  font-size: 0.95rem;
+  color: #aaaaaa;
+  font-weight: 400;
+  white-space: nowrap;
+  display: flex; /* For alignment */
+  align-items: center;
+}
+
+
+/* Responsive adjustments for the column layout */
+@media (max-width: 767px) {
+  .col-3, .col-5, #timeofthematch {
+    flex-basis: 100% !important; /* Make all columns full width */
+    max-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 10px; /* Add spacing when stacked */
+    justify-content: center; /* Center text when stacked */
+    text-align: center;
+  }
+  .col-3 span {
+    justify-content: center; /* Center the league name badge */
+  }
+  .col.column.mt-1 .row {
+    flex-direction: column; /* Stack inner items */
+    align-items: center;
+  }
+  .match-card {
+      padding: 15px; /* Slightly less padding on smaller screens */
+  }
+}
+
+/* --- Custom Styles for YOUR Specific HTML Structure --- */
+/*
+   Because your HTML uses custom classes like 'col-3', 'col-5', etc.
+   which are usually part of a framework, I've made assumptions about
+   their behavior (like flexbox). If you're using a specific framework
+   (like Bootstrap), ensure its grid CSS is loaded BEFORE this custom CSS,
+   or these styles might not work as expected.
+   I've tried to make them self-contained to achieve the look.
+*/
+
+/* Remove or comment out animation styles if you don't want them */
+.page-intro,
+.match-list,
+.boxing-seo-text {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+/* If you want the elements to be visible by default and then animate in
+   as they scroll into view, you'd need JavaScript to add an 'animate' class.
+   For a simple page load, the current setup with animation on load is fine. */
+
+
     </style>
   </head>
   <body>
@@ -315,7 +475,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JVito%20Mielnicki%20vs%20Kamil%20Gardzielik" target="_blank">Vito Mielnicki vs Kamil Gardzielik</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Vito%20Mielnicki%20vs%20Kamil%20Gardzielik" target="_blank">Vito Mielnicki vs Kamil Gardzielik</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 21</div>
     </div>
   </div>
@@ -326,7 +486,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JCallum%20Walsh%20vs%20Elias%20Espadas" target="_blank">Callum Walsh vs Elias Espadas</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Callum%20Walsh%20vs%20Elias%20Espadas" target="_blank">Callum Walsh vs Elias Espadas</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 21</div>
     </div>
   </div>
@@ -337,7 +497,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JCain%20Sandoval%20vs%20Jonathan%20Eniz" target="_blank">Cain Sandoval vs Jonathan Eniz</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Cain%20Sandoval%20vs%20Jonathan%20Eniz" target="_blank">Cain Sandoval vs Jonathan Eniz</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 21</div>
     </div>
   </div>
@@ -348,7 +508,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JUmar%20Dzambekov%20vs%20Roamer%20Alexis%20Angulo" target="_blank">Umar Dzambekov vs Roamer Alexis Angulo</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Umar%20Dzambekov%20vs%20Roamer%20Alexis%20Angulo" target="_blank">Umar Dzambekov vs Roamer Alexis Angulo</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 21</div>
     </div>
   </div>
@@ -359,7 +519,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JIyana%20"Roxy"%20Verduzco%20vs%20Celene%20Roman" target="_blank">Iyana "Roxy" Verduzco vs Celene Roman</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Iyana%20"Roxy"%20Verduzco%20vs%20Celene%20Roman" target="_blank">Iyana "Roxy" Verduzco vs Celene Roman</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 21</div>
     </div>
   </div>
@@ -370,7 +530,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JLiam%20Paro%20vs%20Jonathan%20Navarro" target="_blank">Liam Paro vs Jonathan Navarro</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Liam%20Paro%20vs%20Jonathan%20Navarro" target="_blank">Liam Paro vs Jonathan Navarro</a></div>
       <div class="col-3" id="timeofthematch">Wednesday, June 25</div>
     </div>
   </div>
@@ -381,7 +541,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JLiam%20Wilson%20vs%20Ayrton%20Osmar%20Gimenez" target="_blank">Liam Wilson vs Ayrton Osmar Gimenez</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Liam%20Wilson%20vs%20Ayrton%20Osmar%20Gimenez" target="_blank">Liam Wilson vs Ayrton Osmar Gimenez</a></div>
       <div class="col-3" id="timeofthematch">Wednesday, June 25</div>
     </div>
   </div>
@@ -392,7 +552,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JDeontay%20Wilder%20vs%20Tyrrell%20Herndon" target="_blank">Deontay Wilder vs Tyrrell Herndon</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Deontay%20Wilder%20vs%20Tyrrell%20Herndon" target="_blank">Deontay Wilder vs Tyrrell Herndon</a></div>
       <div class="col-3" id="timeofthematch">Friday, June 27</div>
     </div>
   </div>
@@ -403,7 +563,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JChristian%20Mbilli%20vs%20Maciej%20Sulecki" target="_blank">Christian Mbilli vs Maciej Sulecki</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Christian%20Mbilli%20vs%20Maciej%20Sulecki" target="_blank">Christian Mbilli vs Maciej Sulecki</a></div>
       <div class="col-3" id="timeofthematch">Friday, June 27</div>
     </div>
   </div>
@@ -414,7 +574,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JJose%20De%20Jesus%20Macias%20vs%20Steven%20Butler" target="_blank">Jose De Jesus Macias vs Steven Butler</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Jose%20De%20Jesus%20Macias%20vs%20Steven%20Butler" target="_blank">Jose De Jesus Macias vs Steven Butler</a></div>
       <div class="col-3" id="timeofthematch">Friday, June 27</div>
     </div>
   </div>
@@ -425,7 +585,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JArslanbek%20Makhmudov%20vs%20Ricardo%20Brown" target="_blank">Arslanbek Makhmudov vs Ricardo Brown</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Arslanbek%20Makhmudov%20vs%20Ricardo%20Brown" target="_blank">Arslanbek Makhmudov vs Ricardo Brown</a></div>
       <div class="col-3" id="timeofthematch">Friday, June 27</div>
     </div>
   </div>
@@ -436,7 +596,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JJhon%20Orobio%20vs%20Zsolt%20Osadan" target="_blank">Jhon Orobio vs Zsolt Osadan</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Jhon%20Orobio%20vs%20Zsolt%20Osadan" target="_blank">Jhon Orobio vs Zsolt Osadan</a></div>
       <div class="col-3" id="timeofthematch">Friday, June 27</div>
     </div>
   </div>
@@ -447,7 +607,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JJake%20Paul%20vs%20Julio%20Cesar%20Chavez%20Jr." target="_blank">Jake Paul vs Julio Cesar Chavez Jr.</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Jake%20Paul%20vs%20Julio%20Cesar%20Chavez%20Jr." target="_blank">Jake Paul vs Julio Cesar Chavez Jr.</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -458,7 +618,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JGilberto%20Ramirez%20vs%20Yuniel%20Dorticos" target="_blank">Gilberto Ramirez vs Yuniel Dorticos</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Gilberto%20Ramirez%20vs%20Yuniel%20Dorticos" target="_blank">Gilberto Ramirez vs Yuniel Dorticos</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -469,7 +629,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JFloyd%20Schofield%20vs%20Tevin%20Farmer" target="_blank">Floyd Schofield vs Tevin Farmer</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Floyd%20Schofield%20vs%20Tevin%20Farmer" target="_blank">Floyd Schofield vs Tevin Farmer</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -480,7 +640,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JRaul%20Curiel%20vs%20Victor%20Rodriguez" target="_blank">Raul Curiel vs Victor Rodriguez</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Raul%20Curiel%20vs%20Victor%20Rodriguez" target="_blank">Raul Curiel vs Victor Rodriguez</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -491,7 +651,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAvious%20Griffin%20vs%20Julian%20Rodriguez" target="_blank">Avious Griffin vs Julian Rodriguez</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Avious%20Griffin%20vs%20Julian%20Rodriguez" target="_blank">Avious Griffin vs Julian Rodriguez</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -502,7 +662,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JHolly%20Holm%20vs%20Yolanda%20Vega" target="_blank">Holly Holm vs Yolanda Vega</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Holly%20Holm%20vs%20Yolanda%20Vega" target="_blank">Holly Holm vs Yolanda Vega</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -513,7 +673,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JJean%20Pascal%20vs%20Michal%20Cieslak" target="_blank">Jean Pascal vs Michal Cieslak</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Jean%20Pascal%20vs%20Michal%20Cieslak" target="_blank">Jean Pascal vs Michal Cieslak</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -524,7 +684,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JShakan%20Pitters%20vs%20Bradley%20Rea" target="_blank">Shakan Pitters vs Bradley Rea</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Shakan%20Pitters%20vs%20Bradley%20Rea" target="_blank">Shakan Pitters vs Bradley Rea</a></div>
       <div class="col-3" id="timeofthematch">Saturday, June 28</div>
     </div>
   </div>
@@ -535,7 +695,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAlbert%20Batyrgaziev%20vs%20Jazza%20Dickens" target="_blank">Albert Batyrgaziev vs Jazza Dickens</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Albert%20Batyrgaziev%20vs%20Jazza%20Dickens" target="_blank">Albert Batyrgaziev vs Jazza Dickens</a></div>
       <div class="col-3" id="timeofthematch">Wednesday, July 2</div>
     </div>
   </div>
@@ -546,7 +706,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JJack%20Catterall%20vs%20Harlem%20Eubank" target="_blank">Jack Catterall vs Harlem Eubank</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Jack%20Catterall%20vs%20Harlem%20Eubank" target="_blank">Jack Catterall vs Harlem Eubank</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 5</div>
     </div>
   </div>
@@ -557,7 +717,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JKatie%20Taylor%20vs%20Amanda%20Serrano" target="_blank">Katie Taylor vs Amanda Serrano</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Katie%20Taylor%20vs%20Amanda%20Serrano" target="_blank">Katie Taylor vs Amanda Serrano</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -568,7 +728,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAlycia%20Baumgardner%20vs%20Jennifer%20Miranda" target="_blank">Alycia Baumgardner vs Jennifer Miranda</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Alycia%20Baumgardner%20vs%20Jennifer%20Miranda" target="_blank">Alycia Baumgardner vs Jennifer Miranda</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -579,7 +739,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JEllie%20Scotney%20vs%20Yamileth%20Mercado" target="_blank">Ellie Scotney vs Yamileth Mercado</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Ellie%20Scotney%20vs%20Yamileth%20Mercado" target="_blank">Ellie Scotney vs Yamileth Mercado</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -590,7 +750,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JDina%20Thorslund%20vs%20Cherneka%20Johnson" target="_blank">Dina Thorslund vs Cherneka Johnson</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Dina%20Thorslund%20vs%20Cherneka%20Johnson" target="_blank">Dina Thorslund vs Cherneka Johnson</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -601,7 +761,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JSavannah%20Marshall%20vs%20Shadasia%20Green" target="_blank">Savannah Marshall vs Shadasia Green</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Savannah%20Marshall%20vs%20Shadasia%20Green" target="_blank">Savannah Marshall vs Shadasia Green</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -612,7 +772,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JChantelle%20Cameron%20vs%20Jessica%20Camara" target="_blank">Chantelle Cameron vs Jessica Camara</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Chantelle%20Cameron%20vs%20Jessica%20Camara" target="_blank">Chantelle Cameron vs Jessica Camara</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -623,7 +783,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JRamla%20Ali%20vs%20Lila%20Furtado" target="_blank">Ramla Ali vs Lila Furtado</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Ramla%20Ali%20vs%20Lila%20Furtado" target="_blank">Ramla Ali vs Lila Furtado</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -634,7 +794,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JTamm%20Thibeault%20vs%20Mary%20Casamassa" target="_blank">Tamm Thibeault vs Mary Casamassa</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Tamm%20Thibeault%20vs%20Mary%20Casamassa" target="_blank">Tamm Thibeault vs Mary Casamassa</a></div>
       <div class="col-3" id="timeofthematch">Friday, July 11</div>
     </div>
   </div>
@@ -645,7 +805,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JShakur%20Stevenson%20vs%20William%20Zepeda" target="_blank">Shakur Stevenson vs William Zepeda</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Shakur%20Stevenson%20vs%20William%20Zepeda" target="_blank">Shakur Stevenson vs William Zepeda</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 12</div>
     </div>
   </div>
@@ -656,7 +816,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JEdgar%20Berlanga%20vs%20Hamzah%20Sheeraz" target="_blank">Edgar Berlanga vs Hamzah Sheeraz</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Edgar%20Berlanga%20vs%20Hamzah%20Sheeraz" target="_blank">Edgar Berlanga vs Hamzah Sheeraz</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 12</div>
     </div>
   </div>
@@ -667,7 +827,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAlberto%20Puello%20vs%20Subriel%20Matias" target="_blank">Alberto Puello vs Subriel Matias</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Alberto%20Puello%20vs%20Subriel%20Matias" target="_blank">Alberto Puello vs Subriel Matias</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 12</div>
     </div>
   </div>
@@ -678,7 +838,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JDavid%20Morrell%20vs%20Imam%20Khataev" target="_blank">David Morrell vs Imam Khataev</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#David%20Morrell%20vs%20Imam%20Khataev" target="_blank">David Morrell vs Imam Khataev</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 12</div>
     </div>
   </div>
@@ -689,7 +849,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JLester%20Martinez%20vs%20Pierre%20DiBombe" target="_blank">Lester Martinez vs Pierre DiBombe</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Lester%20Martinez%20vs%20Pierre%20DiBombe" target="_blank">Lester Martinez vs Pierre DiBombe</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 12</div>
     </div>
   </div>
@@ -700,7 +860,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JErick%20Badillo%20vs%20Gerardo%20Zapata" target="_blank">Erick Badillo vs Gerardo Zapata</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Erick%20Badillo%20vs%20Gerardo%20Zapata" target="_blank">Erick Badillo vs Gerardo Zapata</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 12</div>
     </div>
   </div>
@@ -711,7 +871,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JOleksandr%20Usyk%20vs%20Daniel%20Dubois" target="_blank">Oleksandr Usyk vs Daniel Dubois</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Oleksandr%20Usyk%20vs%20Daniel%20Dubois" target="_blank">Oleksandr Usyk vs Daniel Dubois</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -722,7 +882,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JLawrence%20Okolie%20vs%20Kevin%20Lerena" target="_blank">Lawrence Okolie vs Kevin Lerena</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Lawrence%20Okolie%20vs%20Kevin%20Lerena" target="_blank">Lawrence Okolie vs Kevin Lerena</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -733,7 +893,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JDaniel%20Lapin%20vs%20Lewis%20Edmondson" target="_blank">Daniel Lapin vs Lewis Edmondson</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Daniel%20Lapin%20vs%20Lewis%20Edmondson" target="_blank">Daniel Lapin vs Lewis Edmondson</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -744,7 +904,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JJesse%20Rodriguez%20vs%20Phumelele%20Cafu" target="_blank">Jesse Rodriguez vs Phumelele Cafu</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Jesse%20Rodriguez%20vs%20Phumelele%20Cafu" target="_blank">Jesse Rodriguez vs Phumelele Cafu</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -755,7 +915,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JDiego%20Pacheco%20vs%20Trevor%20McCumby" target="_blank">Diego Pacheco vs Trevor McCumby</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Diego%20Pacheco%20vs%20Trevor%20McCumby" target="_blank">Diego Pacheco vs Trevor McCumby</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -766,7 +926,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAustin%20Williams%20vs%20Etinosa%20Oliha" target="_blank">Austin Williams vs Etinosa Oliha</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Austin%20Williams%20vs%20Etinosa%20Oliha" target="_blank">Austin Williams vs Etinosa Oliha</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -777,7 +937,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JMario%20Barrios%20vs%20Manny%20Pacquiao" target="_blank">Mario Barrios vs Manny Pacquiao</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Mario%20Barrios%20vs%20Manny%20Pacquiao" target="_blank">Mario Barrios vs Manny Pacquiao</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -788,7 +948,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JSebastian%20Fundora%20vs%20Tim%20Tszyu" target="_blank">Sebastian Fundora vs Tim Tszyu</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Sebastian%20Fundora%20vs%20Tim%20Tszyu" target="_blank">Sebastian Fundora vs Tim Tszyu</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -799,7 +959,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JIsaac%20Cruz%20vs%20Angel%20Fierro" target="_blank">Isaac Cruz vs Angel Fierro</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Isaac%20Cruz%20vs%20Angel%20Fierro" target="_blank">Isaac Cruz vs Angel Fierro</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -810,7 +970,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JBrandon%20Figueroa%20vs%20Joet%20Gonzalez" target="_blank">Brandon Figueroa vs Joet Gonzalez</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Brandon%20Figueroa%20vs%20Joet%20Gonzalez" target="_blank">Brandon Figueroa vs Joet Gonzalez</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 19</div>
     </div>
   </div>
@@ -821,7 +981,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JManuel%20Flores%20vs%20Jorge%20Chavez" target="_blank">Manuel Flores vs Jorge Chavez</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Manuel%20Flores%20vs%20Jorge%20Chavez" target="_blank">Manuel Flores vs Jorge Chavez</a></div>
       <div class="col-3" id="timeofthematch">Thursday, July 24</div>
     </div>
   </div>
@@ -832,7 +992,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JClaressa%20Shields%20vs%20Lani%20Daniels" target="_blank">Claressa Shields vs Lani Daniels</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Claressa%20Shields%20vs%20Lani%20Daniels" target="_blank">Claressa Shields vs Lani Daniels</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 26</div>
     </div>
   </div>
@@ -843,7 +1003,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JSamantha%20Worthington%20vs%20Victoire%20Piteau" target="_blank">Samantha Worthington vs Victoire Piteau</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Samantha%20Worthington%20vs%20Victoire%20Piteau" target="_blank">Samantha Worthington vs Victoire Piteau</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 26</div>
     </div>
   </div>
@@ -854,7 +1014,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JCaroline%20Veyre%20vs%20Licia%20Boudersa" target="_blank">Caroline Veyre vs Licia Boudersa</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Caroline%20Veyre%20vs%20Licia%20Boudersa" target="_blank">Caroline Veyre vs Licia Boudersa</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 26</div>
     </div>
   </div>
@@ -865,7 +1025,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JXander%20Zayas%20vs%20Jorge%20Garcia%20Perez" target="_blank">Xander Zayas vs Jorge Garcia Perez</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Xander%20Zayas%20vs%20Jorge%20Garcia%20Perez" target="_blank">Xander Zayas vs Jorge Garcia Perez</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 26</div>
     </div>
   </div>
@@ -876,7 +1036,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JBruce%20Carrington%20vs%20Mateus%20Heita" target="_blank">Bruce Carrington vs Mateus Heita</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Bruce%20Carrington%20vs%20Mateus%20Heita" target="_blank">Bruce Carrington vs Mateus Heita</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 26</div>
     </div>
   </div>
@@ -887,7 +1047,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JRyan%20Garner%20vs%20Reece%20Bellotti" target="_blank">Ryan Garner vs Reece Bellotti</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Ryan%20Garner%20vs%20Reece%20Bellotti" target="_blank">Ryan Garner vs Reece Bellotti</a></div>
       <div class="col-3" id="timeofthematch">Saturday, July 26</div>
     </div>
   </div>
@@ -898,7 +1058,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JKenshiro%20Teraji%20vs%20Ricardo%20Sandoval" target="_blank">Kenshiro Teraji vs Ricardo Sandoval</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Kenshiro%20Teraji%20vs%20Ricardo%20Sandoval" target="_blank">Kenshiro Teraji vs Ricardo Sandoval</a></div>
       <div class="col-3" id="timeofthematch">Wednesday, July 30</div>
     </div>
   </div>
@@ -909,7 +1069,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAntonio%20Vargas%20vs%20Daigo%20Higa" target="_blank">Antonio Vargas vs Daigo Higa</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Antonio%20Vargas%20vs%20Daigo%20Higa" target="_blank">Antonio Vargas vs Daigo Higa</a></div>
       <div class="col-3" id="timeofthematch">Wednesday, July 30</div>
     </div>
   </div>
@@ -920,7 +1080,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JErick%20Rosa%20vs%20Kyosuke%20Takami" target="_blank">Erick Rosa vs Kyosuke Takami</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Erick%20Rosa%20vs%20Kyosuke%20Takami" target="_blank">Erick Rosa vs Kyosuke Takami</a></div>
       <div class="col-3" id="timeofthematch">Wednesday, July 30</div>
     </div>
   </div>
@@ -931,7 +1091,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JPanya%20Pradabsri%20vs%20Carlos%20Canizales" target="_blank">Panya Pradabsri vs Carlos Canizales</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Panya%20Pradabsri%20vs%20Carlos%20Canizales" target="_blank">Panya Pradabsri vs Carlos Canizales</a></div>
       <div class="col-3" id="timeofthematch">Friday, August 1</div>
     </div>
   </div>
@@ -942,7 +1102,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JOscar%20Duarte%20vs%20Kenneth%20Sims%20Jr." target="_blank">Oscar Duarte vs Kenneth Sims Jr.</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Oscar%20Duarte%20vs%20Kenneth%20Sims%20Jr." target="_blank">Oscar Duarte vs Kenneth Sims Jr.</a></div>
       <div class="col-3" id="timeofthematch">Saturday, August 2</div>
     </div>
   </div>
@@ -953,7 +1113,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JGervonta%20Davis%20vs%20Lamont%20Roach" target="_blank">Gervonta Davis vs Lamont Roach</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Gervonta%20Davis%20vs%20Lamont%20Roach" target="_blank">Gervonta Davis vs Lamont Roach</a></div>
       <div class="col-3" id="timeofthematch">Saturday, August 16</div>
     </div>
   </div>
@@ -964,7 +1124,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JMoses%20Itauma%20vs%20Dillian%20Whyte" target="_blank">Moses Itauma vs Dillian Whyte</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Moses%20Itauma%20vs%20Dillian%20Whyte" target="_blank">Moses Itauma vs Dillian Whyte</a></div>
       <div class="col-3" id="timeofthematch">Saturday, August 16</div>
     </div>
   </div>
@@ -975,7 +1135,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JNick%20Ball%20vs%20Sam%20Goodman" target="_blank">Nick Ball vs Sam Goodman</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Nick%20Ball%20vs%20Sam%20Goodman" target="_blank">Nick Ball vs Sam Goodman</a></div>
       <div class="col-3" id="timeofthematch">Saturday, August 16</div>
     </div>
   </div>
@@ -986,7 +1146,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JAnthony%20Cacace%20vs%20Raymond%20Ford" target="_blank">Anthony Cacace vs Raymond Ford</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Anthony%20Cacace%20vs%20Raymond%20Ford" target="_blank">Anthony Cacace vs Raymond Ford</a></div>
       <div class="col-3" id="timeofthematch">Saturday, August 16</div>
     </div>
   </div>
@@ -997,7 +1157,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JFilip%20Hrgovic%20vs%20David%20Adeleye" target="_blank">Filip Hrgovic vs David Adeleye</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Filip%20Hrgovic%20vs%20David%20Adeleye" target="_blank">Filip Hrgovic vs David Adeleye</a></div>
       <div class="col-3" id="timeofthematch">Saturday, August 16</div>
     </div>
   </div>
@@ -1008,7 +1168,7 @@
     <div class="row">
       <div class="col-3"><span id="leaguenames">Boxing</span></div>
       <div class="col-1" id="afterleaguename"></div>
-      <div class="col-5"><a href="https://club.sportsurge.uno/#JSaul%20"Canelo"%20Alvarez%20vs%20Terence%20Crawford" target="_blank">Saul "Canelo" Alvarez vs Terence Crawford</a></div>
+      <div class="col-5"><a href="https://club.sportsurge.uno/#Saul%20Canelo%20Alvarez%20vs%20Terence%20Crawford" target="_blank">Saul "Canelo" Alvarez vs Terence Crawford</a></div>
       <div class="col-3" id="timeofthematch">Saturday, September 13</div>
     </div>
   </div>
@@ -1023,7 +1183,7 @@
           Discover all free
           <b
             >sportsurge
-            <a href="https://www.streameastlive.uno/p/boxing.html">boxing</a>
+            <a href="https://www.sportsurge.uno/p/boxing.html">boxing</a>
             streams</b
           >. With Sportsurge v3, you can access all <b>boxing streaming</b> and
           enjoy <b>reddit streams live</b>. Simply select your desired fight
@@ -1103,6 +1263,14 @@
         // Optionally, set an interval to re-check for live matches
         // setInterval(updateMatchDates, 60000); // Check every minute
       });
+      
+      /* Ensure the script runs after DOM is ready to apply classes if needed */
+document.addEventListener('DOMContentLoaded', () => {
+    // Add 'animate' class to trigger animations on load
+    document.querySelector('.page-intro').classList.add('animate');
+    document.querySelector('.match-list').classList.add('animate');
+    document.querySelector('.boxing-seo-text').classList.add('animate');
+});
     </script>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
