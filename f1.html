@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="canonical" href="http://www.sportsurge.uno/f1.html" />
+    <!-- SEO Meta Tags -->
+    <title>
+      Sportsurge Formula 1: Live F1 Streams, IndyCar, NASCAR & MotoGP
+    </title>
+    <meta
+      name="description"
+      content="Watch live Formula 1 streams online with Sportsurge. Get free access to F1, IndyCar, NASCAR, MotoGP, and other motorsports with high-quality, ad-free streaming."
+    />
+    <meta
+      name="keywords"
+      content="Sportsurge Formula 1, live F1 streams, F1 streaming, watch F1 online, motorsports streams, Indycar live, NASCAR streams, MotoGP streams, free sports streams, sportsurge motorsports, live racing"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- JSON-LD Schema for FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Sportsurge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sportsurge is an online platform that provides high-quality, ad-free streaming links for live sports events, including motorsports like Formula 1, IndyCar, NASCAR, and MotoGP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I watch Formula 1 games on Sportsurge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To watch Formula 1 games on Sportsurge, visit the Sportsurge website, navigate to the Formula 1 section, select the race you want to watch, and click on the available streaming link."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sportsurge free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Sportsurge is free to use. You can access high-quality motorsports streams without any subscription or payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sportsurge ad-free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Sportsurge is known for providing an ad-free streaming experience, ensuring that you can watch motorsports events without annoying pop-ups and interruptions."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="Sportsurge Formula 1: Live F1 Streams, IndyCar, NASCAR & MotoGP"
+    />
+    <meta
+      property="og:description"
+      content="Watch live Formula 1 streams online with Sportsurge. Get free access to F1, IndyCar, NASCAR, MotoGP, and other motorsports with high-quality, ad-free streaming."
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/v1kyhMv/motorsports.webp"
+    />
+    <!-- Motorsports specific image -->
+    <meta
+      property="og:url"
+      content="https://www.example.com/sportsurge-motorsports-page"
+    />
+    <!-- Your actual page URL -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sportsurge Formula 1: Live F1 Streams, IndyCar, NASCAR & MotoGP"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch live Formula 1 streams online with Sportsurge. Get free access to F1, IndyCar, NASCAR, MotoGP, and other motorsports with high-quality, ad-free streaming."
+    />
+    <meta
+      name="twitter:image"
+      content="https://i.ibb.co/v1kyhMv/motorsports.webp"
+    />
+    <!-- Motorsports specific image -->
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <!-- Optional: Your Twitter handle -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Replace with your favicon path -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0d0d0d 0%,
+          #260000 100%
+        ); /* Dark gradient background */
+        color: #e0e0e0; /* Light gray for text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: #ff4500; /* Vibrant orange-red for selection */
+        color: white;
+      }
+
+      /* --- Container and Layout --- */
+      .page-container {
+        width: 100%;
+        max-width: 960px; /* Slightly wider content area */
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* --- Motorsports Section Title --- */
+      .motorsports-section-title {
+        font-size: 3rem; /* Larger title */
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        margin-bottom: 15px;
+        letter-spacing: 1.5px;
+        color: #ffffff; /* Pure white */
+        text-shadow: 0 0 15px rgba(255, 69, 0, 0.5); /* Orange-red glow */
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        width: 100%;
+      }
+
+      /* --- Match Card Styling --- */
+      .match-list {
+        width: 100%;
+        margin-top: 30px;
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+        display: grid;
+        grid-template-columns: 1fr; /* Single column by default */
+        gap: 15px; /* Spacing between match cards */
+      }
+
+      /* Responsive adjustments for match cards */
+      @media (min-width: 768px) {
+        .match-list {
+          grid-template-columns: 1fr; /* Keep single column on larger screens for simplicity */
+        }
+      }
+
+      .match-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 25px; /* Increased padding */
+        background: rgba(255, 255, 255, 0.04); /* Subtle white background */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from link */
+        color: inherit; /* Inherit text color */
+        text-align: left; /* Align text to the left */
+      }
+      .match-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4); /* Stronger orange-red glow */
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .league-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #ff8c00; /* Darker orange */
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        padding: 6px 12px;
+        background-color: rgba(255, 140, 0, 0.15); /* Semi-transparent orange */
+        border-radius: 6px;
+        flex-shrink: 0; /* Prevent shrinking */
+        margin-right: 15px; /* Space after league name */
+      }
+
+      .match-title {
+        flex-grow: 1; /* Allow match title to take available space */
+        font-size: 1.15rem; /* Slightly larger for match title */
+        font-weight: 700;
+        color: #ffffff; /* White for match title */
+        transition: color 0.3s ease;
+      }
+      .match-card:hover .match-title {
+        color: #ff8c00; /* Orange on hover */
+      }
+
+      .match-time {
+        font-size: 0.95rem;
+        color: #aaaaaa; /* Lighter gray for dates/days */
+        font-weight: 400;
+        margin-left: 15px; /* Space before date */
+        white-space: nowrap; /* Prevent wrapping */
+        flex-shrink: 0; /* Prevent shrinking */
+      }
+      .match-time .live {
+        /* For special messages like "LIVE EVENT" or "LIVE NOW!" */
+        color: #ff4500; /* Bright orange-red */
+        font-weight: 700;
+        font-size: 1.1rem;
+        animation: pulse 1.5s infinite; /* Pulsing animation */
+      }
+      .match-time strong {
+        /* Style for bold items if used */
+        color: white;
+        font-weight: 700;
+      }
+
+      /* --- Descriptive Text Styling --- */
+      .motorsports-description {
+        margin-top: 60px; /* More space above SEO text */
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.4); /* Darker background */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        animation: fadeInUp 1.5s ease-out forwards;
+        opacity: 0;
+        width: 100%;
+      }
+      .motorsports-description p {
+        font-size: 1.15rem;
+        color: #cccccc;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .motorsports-description a {
+        color: #ff8c00;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+      .motorsports-description a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+      .motorsports-description strong {
+        color: #ffffff; /* White for strong emphasis */
+        font-weight: 700;
+      }
+      .motorsports-description h2 {
+        font-size: 2.2rem;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #ff8c00; /* Orange accent */
+        text-align: center;
+        font-weight: 700;
+      }
+      .motorsports-description h3 {
+        font-size: 1.6rem;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #ff8c00; /* Orange accent */
+        text-align: left;
+        font-weight: 700;
+      }
+      .motorsports-description ol {
+        list-style: decimal inside;
+        padding-left: 25px;
+        margin-top: 25px;
+        text-align: left;
+      }
+      .motorsports-description li {
+        margin-bottom: 12px;
+        color: #dddddd;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      /* --- Animations --- */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Apply animations on load */
+      .motorsports-section-title.animate,
+      .page-container.animate,
+      .motorsports-description.animate {
+        opacity: 1;
+      }
+      /* --- Global Styles --- */
+     /* --- Game Card Styling --- */
+.game-card {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Distribute space between elements */
+  padding: 18px 25px; /* Padding around the card */
+  margin-bottom: 15px; /* Space below each card */
+  background: rgba(255, 255, 255, 0.04); /* Subtle semi-transparent background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  cursor: pointer; /* Indicate it's clickable */
+  text-decoration: none; /* Remove default link underline */
+  color: inherit; /* Inherit text color from parent */
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Take full width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.game-card:hover {
+  transform: translateY(-6px) scale(1.01); /* Lift and slightly scale on hover */
+  box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4); /* Stronger orange-red glow on hover */
+  background-color: rgba(255, 255, 255, 0.08); /* Slightly more opaque background on hover */
+}
+
+/* --- League Name Badge --- */
+.league-badge {
+  font-size: 0.9rem; /* Smaller font size */
+  font-weight: 700; /* Bold text */
+  color: #ff8c00; /* Darker orange color */
+  text-transform: uppercase; /* Convert to uppercase */
+  letter-spacing: 0.8px; /* Spacing between letters */
+  padding: 6px 12px; /* Padding for the badge */
+  background-color: rgba(255, 140, 0, 0.15); /* Semi-transparent orange background */
+  border-radius: 6px; /* Rounded corners for the badge */
+  flex-shrink: 0; /* Prevent the badge from shrinking */
+  margin-right: 15px; /* Space between the badge and the next element */
+}
+
+/* --- Game Title --- */
+.game-title {
+  flex-grow: 1; /* Allow this element to take up available space */
+  font-size: 1.15rem; /* Slightly larger font size for the title */
+  font-weight: 700; /* Bold text */
+  color: #ffffff; /* White color for the title */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.game-card:hover .game-title {
+  color: #ff8c00; /* Change title color to orange on hover */
+}
+
+/* --- Game Time/Status --- */
+.game-time {
+  font-size: 0.95rem; /* Font size for time/status */
+  color: #aaaaaa; /* Lighter gray color for time */
+  font-weight: 400; /* Normal font weight */
+  margin-left: 15px; /* Space between the title and the time */
+  white-space: nowrap; /* Prevent the text from wrapping to the next line */
+  flex-shrink: 0; /* Prevent the time from shrinking */
+}
+
+/* --- Live/Status Specific Styles --- */
+.game-time .live {
+  color: #ff4500; /* Bright orange-red for 'LIVE' status */
+  font-weight: 700; /* Bold text */
+  font-size: 1.1rem; /* Slightly larger font size */
+  animation: pulse 1.5s infinite; /* Pulsing animation for 'LIVE' */
+}
+
+.game-time .finished {
+  color: #cccccc; /* Lighter gray for 'FINISHED' status */
+  font-weight: 700; /* Bold text */
+}
+
+.game-time strong {
+  color: white; /* White color for any bolded text */
+  font-weight: 700; /* Ensure bold text is actually bold */
+}
+
+/* --- Countdown Timer (if applicable) --- */
+.game-time .countdown-timer {
+  color: #fca311; /* A distinct orange for countdowns */
+  font-weight: 700; /* Bold */
+  font-size: 0.95rem; /* Matches the base game-time font size */
+}
+
+/* --- Animation for Pulsing Live Indicator --- */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+      /* --- Descriptive Text Styling --- */
+      .section-description {
+        margin-top: 60px; /* More space above SEO text */
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.4); /* Darker background */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        animation: fadeInUp 1.5s ease-out forwards;
+        opacity: 0;
+        width: 100%;
+      }
+      .section-description p {
+        font-size: 1.15rem;
+        color: #cccccc;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .section-description a {
+        color: #ff8c00;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+      .section-description a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+      .section-description strong {
+        color: #ffffff; /* White for strong emphasis */
+        font-weight: 700;
+      }
+      .section-description h2 {
+        font-size: 2.2rem;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #ff8c00; /* Orange accent */
+        text-align: center;
+        font-weight: 700;
+      }
+      .section-description h3 {
+        font-size: 1.6rem;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #ff8c00; /* Orange accent */
+        text-align: left;
+        font-weight: 700;
+      }
+      .section-description ol {
+        list-style: decimal inside;
+        padding-left: 25px;
+        margin-top: 25px;
+        text-align: left;
+      }
+      .section-description li {
+        margin-bottom: 12px;
+        color: #dddddd;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      /* --- No Games Message --- */
+      .no-games {
+        margin-top: 20px;
+        padding: 20px;
+        font-size: 1.2rem;
+        color: #ff8c00; /* Orange accent */
+        font-weight: 700;
+      }
+
+      /* --- Animations --- */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Apply animations on load */
+      .section-title.animate,
+      .page-container.animate,
+      .section-description.animate {
+        opacity: 1;
+      }
+
+      /* --- Specific Styling for Countdown --- */
+      #timeofthematch .countdown-timer {
+        color: #fca311; /* Orange accent for countdown */
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Motorsports Section Title -->
+      <h1 class="motorsports-section-title">
+        Sportsurge: Watch Live Formula 1 Streams Online
+      </h1>
+
+      <!-- Match Cards Container -->
+      <div class="match-list" id="matchesContainer">
+        <!-- Placeholder for dynamically loaded Motorsports games -->
+        <!-- These div tags were for scripting purposes, removed them as they were empty -->
+        <div id="formula1"></div>
+    <div id="F1"></div>
+        <div id="no-games-message" style="display: none">
+          <p>
+            No live motorsports events scheduled at the moment. Check back soon!
+          </p>
+        </div>
+      </div>
+
+      <!-- Descriptive Text -->
+      <div class="motorsports-description">
+        <p>
+          Are you a motorsports fanatic looking to watch
+          <b>Formula 1 live streams online</b>? Look no further than
+          <b><a href="https://www.sportsurge.uno/">Sportsurge</a></b
+          >! We bring the thrill of the track directly to you with high-quality
+          streaming for a wide range of racing events. Whether you're passionate
+          about the speed and precision of Formula 1 grand prix live stream F1,
+          the open-wheel excitement of Indycar, the roaring engines of NASCAR,
+          or the two-wheeled mastery of MotoGP, Sportsurge has you covered.
+        </p>
+        <h2>
+          Why Sportsurge is the Best Site for High-Quality Motorsports Streams
+        </h2>
+        <p>
+          Stop searching endlessly for reliable streams. Sportsurge is your
+          centralized hub for accessing live motorsports action. Enjoy seamless
+          streaming experiences and catch every race, practice session, and
+          qualifying event from your favorite series. Get ready to immerse
+          yourself in the world of high-octane competition!
+        </p>
+
+        <h2>Where to Find Reliable F1 Streams Online</h2>
+        <p>
+          Discover the best way to stream Formula 1 races and explore other top
+          motorsports leagues. Sportsurge is designed for fans who demand speed,
+          variety, and easy access to live racing. Don't miss a single lap –
+          start watching now!
+        </p>
+
+        <h2>How to Watch Live Formula 1 Races for Free</h2>
+        <p>
+          Watching live Formula 1 races has never been easier. With Sportsurge,
+          you can access high-quality Formula 1 streaming services without any
+          hassle. Here's how you can watch live Formula 1 races for free:
+        </p>
+        <ol>
+          <li>Visit the Sportsurge website.</li>
+          <li>Navigate to the Formula 1 section.</li>
+          <li>Select the race you want to watch.</li>
+          <li>Click on the available streaming link.</li>
+        </ol>
+        <p>It's that simple! Enjoy the best in motorsports with ease.</p>
+
+        <h2>Sportsurge Formula 1 Streaming Reviews</h2>
+        <p>
+          Sportsurge has garnered rave reviews from motorsports fans worldwide.
+          The platform's user-friendly interface, high-quality streams, and
+          ad-free experience make it the go-to choice for watching Formula 1,
+          Indycar, NASCAR, and MotoGP. Whether you're at home or on the go,
+          Sportsurge ensures you never miss a moment of the action.
+        </p>
+
+        <h3>Watch Live Indycar Races Online for Free</h3>
+        <p>
+          If you're a fan of open-wheel racing, Sportsurge offers the best site
+          for high-quality Indycar streams. Experience the excitement of Indycar
+          races with reliable and ad-free streaming.
+        </p>
+
+        <h3>NASCAR Live Streaming Without Ads</h3>
+        <p>
+          NASCAR fans can rejoice! Sportsurge provides NASCAR live streaming
+          without annoying ads. Enjoy every race with uninterrupted viewing
+          pleasure.
+        </p>
+
+        <h3>Best MotoGP Streaming Websites 2025</h3>
+        <p>
+          For MotoGP enthusiasts, Sportsurge is the ultimate destination. Watch
+          MotoGP races live without interruptions and stay up-to-date with the
+          latest in two-wheeled racing.
+        </p>
+
+        <h3>How to Watch Formula 1 Without Cable</h3>
+        <p>
+          Cut the cord and watch Formula 1 without cable. Sportsurge offers a
+          comprehensive guide to streaming Formula 1 races legally and for free.
+        </p>
+
+        <h2>Stream Formula 1, NASCAR, Indycar, and MotoGP Online</h2>
+        <p>
+          Sportsurge is the one-stop-shop for all your motorsports streaming
+          needs. From Formula 1 to NASCAR, Indycar, and MotoGP, experience live
+          racing action in one place. Stream your favorite series with ease and
+          never miss a single lap.
+        </p>
+
+        <h2>FAQs about Sportsurge and Live Motorsports Streaming</h2>
+
+        <h3>What is Sportsurge?</h3>
+        <p>
+          Sportsurge is an online platform that provides high-quality, ad-free
+          streaming links for live sports events, including motorsports like
+          Formula 1, Indycar, NASCAR, and MotoGP.
+        </p>
+
+        <h3>How do I watch MLB games on Sportsurge?</h3>
+        <p>
+          To watch MLB games on Sportsurge, visit the Sportsurge website,
+          navigate to the MLB section, select the game you want to watch, and
+          click on the available streaming link.
+        </p>
+
+        <h3>Is Sportsurge free to use?</h3>
+        <p>
+          Yes, Sportsurge is free to use. You can access high-quality MLB
+          streams without any subscription or payment.
+        </p>
+
+        <h3>Is Sportsurge ad-free?</h3>
+        <p>
+          Yes, Sportsurge is known for providing an ad-free streaming
+          experience, ensuring that you can watch MLB games without annoying
+          pop-ups and interruptions.
+        </p>
+
+        <h3>Best Way to Stream Formula 1 Races in 2025</h3>
+        <p>
+          Discover the best way to stream Formula 1 races in 2025 with
+          Sportsurge. Enjoy high-quality streams and a user-friendly interface
+          for an unparalleled viewing experience.
+        </p>
+      </div>
+    </div>
+
+    <!-- JSON-LD Schema for FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Sportsurge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sportsurge is an online platform that provides high-quality, ad-free streaming links for live sports events, including motorsports like Formula 1, IndyCar, NASCAR, and MotoGP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I watch MLB games on Sportsurge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To watch MLB games on Sportsurge, visit the Sportsurge website, navigate to the MLB section, select the game you want to watch, and click on the available streaming link."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sportsurge free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Sportsurge is free to use. You can access high-quality motorsports streams without any subscription or payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sportsurge ad-free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Sportsurge is known for providing an ad-free streaming experience, ensuring that you can watch motorsports events without annoying pop-ups and interruptions."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Script Tags -->
+    <script src="https://sportsurge-com.github.io/streameast/js/script2.js"></script>
+    <script src="https://sportsurge-com.github.io/streameast/js/365scores.js"></script>
+
+    <script>
+      // Function to add animation class on scroll or load
+      function animateElements() {
+        const animatedElements = document.querySelectorAll(
+          ".motorsports-section-title, .match-list, .motorsports-description"
+        );
+        animatedElements.forEach((el) => {
+          el.classList.add("animate");
+        });
+      }
+
+      // Trigger animations when the DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        animateElements(); // Apply animations immediately on load
+
+        // If you had dynamic content loading, you would call loadMotorsportsContent here.
+        // For this static example, the placeholder cards are already present.
+        // You might want to check if there are any actual dynamic cards to adjust the 'no-games-message'.
+        const matchCards = document.querySelectorAll(".match-card");
+        if (
+          matchCards.length === 0 ||
+          (matchCards.length === 1 &&
+            matchCards[0].querySelector(".league-name").textContent ===
+              "Formula 1" &&
+            matchCards[0].querySelector(".match-title").textContent ===
+              "Explore F1 Streams")
+        ) {
+          // This condition checks if only the placeholder card exists or no cards at all.
+          // Adjust the condition if your actual dynamic content has a different structure.
+          document.getElementById("no-games-message").style.display = "block";
+        } else {
+          document.getElementById("no-games-message").style.display = "none";
+        }
+      });
+
+      // Placeholder for dynamic content loading function (if needed)
+      // function loadMotorsportsContent() { ... }
+    </script>
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "n58cp59agu");
+</script>
+  </body>
+</html>
