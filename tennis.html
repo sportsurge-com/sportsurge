@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportsurge Tennis - Tennis Reddit Streams</title>
+   <meta name="description" content="Watch the French Open  Roland Garros live on Sportsurge! Your ultimate solution for live tennis streaming, including Wimbledon, US Open, ATP & WTA tours. Don't miss a match!"/>
+    <meta name="keywords" content="sportsurge tennis, live tennis streaming, french open live, roland garros stream, sportsurge tennis, tennis stream east, wimbledon live, us open live, australian open live, atp tour live, wta tour live, grand slam tennis, tennis broadcasts, live sports streaming"/>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #2c2c2c;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #f0a500; /* Accent color */
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            color: #f0a500; /* Accent color for title */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #b0b0b0;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* League Name Styling */
+        #leaguenames {
+            font-size: 2.2em;
+            color: #f0a500; /* Accent color */
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+            display: block; /* Ensures it takes full width for centering */
+        }
+
+        /* Match Card Styling */
+        #matchcard {
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer;
+            display: flex; /* Use flexbox for row alignment */
+            align-items: center; /* Vertically align items */
+            justify-content: space-between; /* Distribute space between columns */
+        }
+
+        #matchcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(240, 165, 0, 0.3); /* Hover shadow with accent */
+        }
+
+        /* Row and Column Styling for Match Card */
+        .row {
+            width: 100%; /* Ensure row takes full width */
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .col-3, .col-1, .col-5 {
+            padding: 5px 15px;
+            flex-grow: 0; /* Prevent growing beyond content */
+        }
+
+        .col-3 {
+            flex-basis: 25%; /* Approximate width for col-3 */
+            max-width: 25%;
+            text-align: left; /* Align text to the left */
+        }
+
+        .col-1 {
+            flex-basis: 8.33%; /* Approximate width for col-1 */
+            max-width: 8.33%;
+        }
+
+        .col-5 {
+            flex-basis: 41.66%; /* Approximate width for col-5 */
+            max-width: 41.66%;
+            text-align: center; /* Center the main match info */
+            font-weight: bold;
+        }
+
+        /* Specific Spans within the match card */
+        #matchcard span[id='leaguenames'] {
+            color: #f0a500; /* Accent color for league names */
+            font-size: 1.4em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Status Styling */
+        .live {
+            color: #ff4d4d; /* Red for live */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+
+        .final {
+            color: #00cc00; /* Green for final */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+
+        #timetd {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* Descriptive Text Section */
+        .description-section {
+            text-align: justify;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+
+        .description-section b {
+            color: #f0a500; /* Accent color for bold text */
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            background-color: #2c2c2c;
+            border-top: 3px solid #f0a500; /* Accent color */
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .col-3, .col-1, .col-5 {
+                flex-basis: 100%; /* Stack columns on small screens */
+                max-width: 100%;
+                text-align: center; /* Center all content */
+                margin-bottom: 15px;
+            }
+            #matchcard {
+                flex-direction: column; /* Stack items vertically */
+                padding: 15px;
+            }
+            .row {
+                flex-direction: column;
+            }
+            .col-5 {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Sportsurge Tennis</h1>
+        <p>Your ultimate destination for live tennis streaming.</p>
+    </header>
+
+    <div class="container" id="matchesContainer">
+        <h2 id="leaguenames" style="text-align: center;">Upcoming & Live Matches</h2>
+        <div id="espntennis">
+            <!-- Tennis matches will be loaded here by JavaScript -->
+            <p style="text-align: center; margin-top: 50px;">Loading live tennis matches...</p>
+        </div>
+        <!-- Commented out leagues can be uncommented if needed later -->
+        <!--
+        <div id="rolandgarroswomen"></div>
+        <div id="rolandgarrosmen"></div>
+        <div id="wimbledonmen"></div>
+        <div id="usopenmen"></div>
+        <div id="australianopenmen"></div>
+        <div id="stuttgart"></div>
+        <div id="valencia"></div>
+        <div id="hertogenbosch"></div>
+        <div id="olympics-men"></div>
+        <div id="olympics-doubles"></div>
+        -->
+    </div>
+<center>
+    <div class="container description-section">
+        <p>
+            Live Tennis Streaming on Sportsurge. Watch the French Open / Roland Garros live on Sportsurge. Look no further for your ultimate live streaming solution - welcome to the go-to platform for all your live tennis broadcasts. <b>Sport Surge Tennis</b> LIVE scours the globe to deliver top-tier live streaming of all your favorite matches. Explore our comprehensive list of upcoming matches, today and beyond.
+        </p>
+        <p>
+            <b>Tennis StreamEast</b> offers a wide selection of <b>tennis</b> events, from Grand Slam tournaments like Wimbledon, the <b><a href="#usopenmen">US Open</a></b>, and the <b><a href="#australianopenmen">Australian Open</a></b> to the <b>ATP</b> and <b>WTA</b> tours covering different continents. Whether you enjoy the fast-paced action of singles matches or the strategic intensity of doubles, we've got you covered.
+        </p>
+        <p>
+            Don't miss the excitement of watching your favorite tennis stars battle it out on the court. Tune in to <b>Sportsurge Tennis LIVE</b> for a premium live streaming experience that puts you right in the heart of the action! 🎾🔥
+        </p>
+    </div>
+</center>
+    <footer class="footer">
+        <p>© 2023 Sportsurge Tennis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const API_URL_TENNIS = `https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=tennis`;
+
+        async function getTennisFixture() {
+            const response = await fetch(`${API_URL_TENNIS}`);
+            const data = await response.json();
+            console.log("Full API Response:", data);
+
+            const sports = data.sports;
+            let matchesFound = false;
+
+            const container = document.querySelector('#espntennis');
+
+            if (!container) {
+                console.error("Error: Container element with ID 'espntennis' not found in HTML.");
+                return;
+            }
+
+            container.innerHTML = ''; // Clear previous content
+
+            for (const sport of sports) {
+                for (const league of sport.leagues) {
+                    // Filter for leagues that actually have events (to avoid empty sections)
+                    if (league.events && league.events.length > 0) {
+                        for (const event of league.events) {
+                            console.log("Event:", event);
+
+                           // Extract information from the event object
+                        const eventName = event.name;       // Full name of the event (e.g., "BNP Paribas Open")
+                        const eventLocation = event.location; // Location (e.g., "Indian Wells, USA")
+                        const competitionId = event.competitionId; // Competition ID (e.g., "154445")
+                        const competitionType = event.competitionType.text; // Competition type (e.g., "Men's Singles")
+                        const eventStatus = event.status;    // Event status ("pre", "in", "post")
+
+                        const competitors = event.competitors;
+                        const competitor1 = competitors[0].displayName;  //First competitor
+                        const competitor2 = competitors[1].displayName; //Second competitor
+// Create tennis url
+                        const tennis_URL = `https://club.sportsurge.uno/#${competitor1} vs ${competitor2}`;
+                        
+                            const eventDate = event.date ? new Date(event.date) : null; // Create event date, handle null
+
+                            let statusHtml = "";
+
+                            // Determine status text based on event status
+                            if (eventStatus === "pre" && eventDate) {
+                                // Countdown logic remains here
+                                statusHtml = `<div id='timetd' width='1%'><div id='time'></div></div>`;
+                            } else if (eventStatus === "in") {
+                                statusHtml = `<span class="live">LIVE NOW!</span>`;
+                            } else if (eventStatus === "post") {
+                                statusHtml = `<span class="final">Final</span>`;
+                            } else {
+                                statusHtml = `<span>${eventStatus}</span>`; // Fallback for unknown statuses
+                            }
+
+                            matchesFound = true;
+
+                            const teamContainer = document.createElement('div');
+                            teamContainer.id = 'matchcard';
+                            // Set onclick to navigate to the specific anchor or a new page if needed
+                            // For now, it points to an internal anchor `#...`
+                            teamContainer.onclick = () => {
+                                // If you want to navigate to a new page with the match info,
+                                // you'd need a backend or a different approach.
+                                // For now, this will scroll to an element with that ID if it exists.
+                                // If you want to open a *new tab* with a generated URL:
+                                // window.open(`https://yourstreamingdomain.com/tennis/${formattedCompetitor1}-vs-${formattedCompetitor2}`, '_blank');
+                                // For now, let's just simulate clicking the link if it were there.
+                                // Or, if you intend to open a streaming page:
+                                const streamingLink = `${tennis_URL}`; // Assuming this is the base URL
+                                window.open(streamingLink, '_blank');
+                            };
+                            teamContainer.innerHTML = `
+                                <div class="row">
+                                    <div class="col-3">
+                                        <span id='leaguenames'>${eventName}</span>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-5">
+                                        ${competitor1} vs ${competitor2}<br>
+                                        ${competitionType}
+                                    </div>
+                                    <div class="col-3">
+                                        ${statusHtml}
+                                    </div>
+                                </div>`;
+
+                            container.appendChild(teamContainer);
+
+                            // Countdown logic for "pre" events
+                            if (eventStatus === "pre" && eventDate) {
+                                const countdownElement = teamContainer.querySelector('#time');
+                                const countdownDate = eventDate.getTime();
+
+                                function updateCountdown() {
+                                    const currentTime = new Date().getTime();
+                                    const distance = countdownDate - currentTime;
+
+                                    if (distance < 0) {
+                                        // If countdown is finished, update status to LIVE NOW
+                                        const statusDiv = teamContainer.querySelector('.col-3');
+                                        statusDiv.innerHTML = `<span class="live">LIVE NOW!</span>`;
+                                        clearInterval(countdownInterval); // Stop this countdown
+                                        return;
+                                    }
+
+                                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                                }
+
+                                updateCountdown(); // Initial call
+                                const countdownInterval = setInterval(updateCountdown, 1000);
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Display a message if no matches were found
+            if (!matchesFound) {
+                container.innerHTML = '<p style="text-align: center; margin-top: 50px;">No live or upcoming tennis matches found at the moment. Please check back later.</p>';
+            }
+        }
+
+        getTennisFixture();
+    </script>
+</body>
+</html>
